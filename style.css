@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Red+Hat+Text:wght@400;500;600;700&family=Silkscreen&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    border: 3px solid rgb(128, 0, 0);
+
+}
+
+.header {
+    position: absolute;
+    border: 3px solid green;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 14px 14px 28px #828282,
+        -14px -14px 28px #ffffff;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, #fff 25%, #DF7861 100%);
+}
+
+.header .header-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.header .header-left img {
+    width: 9rem;
+}
+
+.header .header-left .title_d{
+    margin-top: 2rem;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #42032C;
+}
+.header .header-left .subtitle_s{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #E64848;
+}
+.header .contact_d{
+    font-family: 'Caveat Brush', cursive;
+
+    position: relative;
+    top: 3.5rem;
+    left: 25%;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #42032C;
+}
+
+
+
+/* .main{
+    margin-top: 50;
+} */

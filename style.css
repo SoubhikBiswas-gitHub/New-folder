@@ -13,13 +13,14 @@ html {
 .container {
     position: absolute;
     width: 100%;
-    border: 3px solid rgb(128, 0, 0);
+    /* border: 3px solid rgb(128, 0, 0); */
 
 }
 
 .header {
     position: absolute;
-    border: 3px solid green;
+    border-bottom: 2px solid rgba(255, 0, 39, 0.89);
+    /* border: 3px solid green; */
     width: 100%;
     padding: 5px;
     display: flex;
@@ -27,7 +28,10 @@ html {
     /* box-shadow: 14px 14px 28px #828282,
         -14px -14px 28px #ffffff; */
     justify-content: flex-start;
-    background: linear-gradient(90deg, #fff 25%, #DF7861 100%);
+    background: linear-gradient(295deg, rgba(255, 0, 39, 0.89) 0%, rgba(255, 255, 255, 1) 80%);
+    /* background: linear-gradient(180deg, rgba(255,0,39,0.8827906162464986) 0%, rgba(255,255,255,1) 80%); */
+    /* background: linear-gradient(185deg, rgba(255,0,39,1) 18%, rgba(255,255,255,1) 59%, rgba(255,255,255,1) 98%); */
+    /* background: linear-gradient(90deg, #fff 25%, #DF7861 100%); */
 }
 
 .header .header-left {
@@ -71,14 +75,14 @@ html {
 
 .container .main {
     margin-top: 110px;
-    border: 5px solid rgb(107, 0, 128);
+    /* border: 5px solid rgb(107, 0, 128); */
 }
 
 .container .main-outer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 5px solid rgb(9, 0, 128);
+    /* border: 5px solid rgb(9, 0, 128); */
     padding: 1px;
 }
 
@@ -94,6 +98,10 @@ html {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    /* background: url(./assets/bg\ remove\ logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    backface-visibility: hidden; */
 
 }
 
@@ -154,11 +162,11 @@ html {
 
 .pizza-type .pizza-details span {
     width: 15rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 700;
-    color: #3FA796;
+    color: #005555;
     text-align: center;
-    padding: 1.6px;
+    padding: 3px;
 
 }
 
@@ -331,74 +339,78 @@ html {
 
 .order .bill-status {
 
-   /* justify-content: center; */
-   align-items: center;
+    /* justify-content: center; */
+    align-items: center;
     /* border: 5px solid rgb(8, 0, 255); */
     width: 100%;
 }
 
- /* .bill-status table{
+/* .bill-status table{
     align-items: center;
  } */
 
- /* .bill-status table .ncol,
+/* .bill-status table .ncol,
  .bill-status table .scol,
  .bill-status table .pcol{
     width:100%;
     white-space:nowrap;
  } */
 
- table{
+table {
     width: 90%;
- }
+}
 
- tr{
+tr {
     align-items: center;
- }
+}
 
- td{
-    width:30%;
-    white-space:nowrap;
+td {
+    width: 30%;
+    white-space: nowrap;
     text-align: center;
- }
+}
 
-.total_r{
+.total_r {
     border-top: 2px solid red;
 }
 
- table,th,td{
+table,
+th,
+td {
     /* width: 100%; */
     padding: 5px;
-    
-    border-collapse: collapse;
- }
 
- th{
+    border-collapse: collapse;
+}
+
+th {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: underline;
     color: #4B8673;
- }
- td{
+}
+
+td {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     color: #990000;
- }
+}
 
- .total_c{
+.total_c {
     font-size: 1.6rem;
     color: #541690;
- }
+}
 
-.lbl{
+.lbl {
     margin: 10px;
     display: inline-block;
     width: 100%;
     text-align: center;
-    color:#590696 ;
+    color: #590696;
     font-size: 3rem;
+    font-weight: 900;
 }
 
 

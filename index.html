@@ -8,6 +8,7 @@
     <title>Order Status Management V2</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/6d903a652a.js" crossorigin="anonymous"></script>
+    <script src="./js/index.js" defer></script>
 </head>
 
 <body>
@@ -38,18 +39,20 @@
 
                     <div class="pizza-details">
                         <div class="pizza">
-                            <button class="pizza-img">
+                            <button id="p1Btn"  class="pizza-img">
                                 <div class="price">
-                                    <span>Small : Rs 150/-</span>
+                                    <span>
+                                    <span id="p1si">Small</span>: Rs <span id="p1p">110</span>/-
+                                    </span>
                                 </div>
                                 <img src="./assets/Corn&Cheese.jpg" alt="Corn&Cheese" srcset="">
                             </button>
                             <span class="name"> Corn & Cheese </span></span>
                         </div>
                         <div class="sizes">
-                            <button class="small">S</button>
-                            <button class="medium">M</button>
-                            <button class="large">L</button>
+                            <button id="p1s" class="small">S</button>
+                            <button id="p1m" class="medium">M</button>
+                            <button id="p1l" class="large">L</button>
                         </div>
                     </div>
                     <!-- **************************** -->
@@ -61,18 +64,20 @@
                     <!-- **************************** -->
                     <div class="pizza-details">
                         <div class="pizza">
-                            <button class="pizza-img">
+                            <button id="p2Btn" class="pizza-img">
                                 <div class="price">
-                                    <span>Small : Rs 150/-</span>
+                                    <span>
+                                        <span id="p2si">Small</span>: Rs <span id="p2p">160</span>/-
+                                    </span>
                                 </div>
                                 <img src="./assets/DeluxeVeggie.jpg" alt="Corn&Cheese" srcset="">
                             </button>
                             <span class="name"> Deluxe Veggie</span>
                         </div>
                         <div class="sizes">
-                            <button class="small">S</button>
-                            <button class="medium">M</button>
-                            <button class="large">L</button>
+                            <button id="p2s" class="small">S</button>
+                            <button id="p2m" class="medium">M</button>
+                            <button id="p2l" class="large">L</button>
                         </div>
                     </div>
                     <!-- **************************** -->
@@ -85,18 +90,20 @@
 
                     <div class="pizza-details">
                         <div class="pizza">
-                            <button class="pizza-img">
+                            <button id="p3Btn" class="pizza-img">
                                 <div class="price">
-                                    <span>Small : Rs 150/-</span>
+                                    <span>
+                                        <span id="p3si">Small</span>: Rs <span id="p3p">130</span>/-
+                                    </span>
                                 </div>
                                 <img src="./assets/DigitalVeggieParadise.jpg" alt="Corn&Cheese" srcset="">
                             </button>
                             <span class="name">Veggie Paradise</span>
                         </div>
                         <div class="sizes">
-                            <button class="small">S</button>
-                            <button class="medium">M</button>
-                            <button class="large">L</button>
+                            <button id="p3s" class="small">S</button>
+                            <button id="p3m" class="medium">M</button>
+                            <button id="p3l" class="large">L</button>
                         </div>
                     </div>
 
@@ -109,18 +116,20 @@
                     <!-- **************************** -->
                     <div class="pizza-details">
                         <div class="pizza">
-                            <button class="pizza-img">
+                            <button id="p4Btn" class="pizza-img">
                                 <div class="price">
-                                    <span>Small : Rs 150/-</span>
+                                    <span>
+                                        <span id="p4si">Small</span>: Rs <span id="p4p">120</span>/-
+                                    </span>
                                 </div>
                                 <img src="./assets/FreshVeggie.jpg" alt="Corn&Cheese" srcset="">
                             </button>
                             <span class="name"> Fresh Veggie</span>
                         </div>
                         <div class="sizes">
-                            <button class="small">S</button>
-                            <button class="medium">M</button>
-                            <button class="large">L</button>
+                            <button id="p4s" class="small">S</button>
+                            <button id="p4m" class="medium">M</button>
+                            <button id="p4l" class="large">L</button>
                         </div>
                     </div>
                     <!-- **************************** -->
@@ -133,18 +142,20 @@
 
                     <div class="pizza-details">
                         <div class="pizza">
-                            <button class="pizza-img">
+                            <button id="p5Btn" class="pizza-img">
                                 <div class="price">
-                                    <span>Small : Rs 150/-</span>
+                                    <span>
+                                        <span id="p5si">Small</span>: Rs <span id="p5p">180</span>/-
+                                    </span>
                                 </div>
                                 <img src="./assets/IndianTandooriPaneer.jpg" alt="Corn&Cheese" srcset="">
                             </button>
                             <span class="name">Tandoori Paneer</span>
                         </div>
                         <div class="sizes">
-                            <button class="small">S</button>
-                            <button class="medium">M</button>
-                            <button class="large">L</button>
+                            <button id="p5s" class="small">S</button>
+                            <button id="p5m" class="medium">M</button>
+                            <button id="p5l" class="large">L</button>
                         </div>
                     </div>
                     <!-- **************************** -->
@@ -157,18 +168,20 @@
 
                     <div class="pizza-details">
                         <div class="pizza">
-                            <button class="pizza-img">
+                            <button id="p6Btn" class="pizza-img">
                                 <div class="price">
-                                    <span>Small : Rs 150/-</span>
+                                    <span>
+                                        <span id="p6si">Small</span>: Rs <span id="p6p">170</span>/-
+                                    </span>
                                 </div>
                                 <img src="./assets/MexicanGreenWave.jpg" alt="Corn&Cheese" srcset="">
                             </button>
                             <span class="name"> Mexican Green</span>
                         </div>
                         <div class="sizes">
-                            <button class="small">S</button>
-                            <button class="medium">M</button>
-                            <button class="large">L</button>
+                            <button id="p6s" class="small">S</button>
+                            <button id="p6m" class="medium">M</button>
+                            <button id="p6l" class="large">L</button>
                         </div>
                     </div>
                     <!-- **************************** -->
@@ -181,18 +194,20 @@
 
                     <div class="pizza-details">
                         <div class="pizza">
-                            <button class="pizza-img">
+                            <button id="p7Btn" class="pizza-img">
                                 <div class="price">
-                                    <span>Small : Rs 150/-</span>
+                                    <span>
+                                        <span id="p7si">Small</span>: Rs <span id="p7p">140</span>/-
+                                    </span>
                                 </div>
                                 <img src="./assets/PaneerMakhni.jpg" alt="Corn&Cheese" srcset="">
                             </button>
                             <span class="name">Paneer Makhni </span>
                         </div>
                         <div class="sizes">
-                            <button class="small">S</button>
-                            <button class="medium">M</button>
-                            <button class="large">L</button>
+                            <button id="p7s" class="small">S</button>
+                            <button id="p7m" class="medium">M</button>
+                            <button id="p7l" class="large">L</button>
                         </div>
                     </div>
                     <!-- **************************** -->
@@ -205,18 +220,20 @@
 
                     <div class="pizza-details">
                         <div class="pizza">
-                            <button class="pizza-img">
+                            <button id="p8Btn" class="pizza-img">
                                 <div class="price">
-                                    <span>Small : Rs 150/-</span>
+                                    <span>
+                                        <span id="p8si">Small</span>: Rs <span id="p8p">145</span>/-
+                                    </span>
                                 </div>
                                 <img src="./assets/Peppy_Paneer.jpg" alt="Corn&Cheese" srcset="">
                             </button>
                             <span class="name"> Peppy Paneer</span>
                         </div>
                         <div class="sizes">
-                            <button class="small">S</button>
-                            <button class="medium">M</button>
-                            <button class="large">L</button>
+                            <button id="p8s" class="small">S</button>
+                            <button id="p8m" class="medium">M</button>
+                            <button id="p8l" class="large">L</button>
                         </div>
                     </div>
                     <!-- **************************** -->
@@ -229,18 +246,20 @@
 
                     <div class="pizza-details">
                         <div class="pizza">
-                            <button class="pizza-img">
+                            <button id="p9Btn" class="pizza-img">
                                 <div class="price">
-                                    <span>Small : Rs 150/-</span>
+                                    <span>
+                                        <span id="p9si">Small</span>: Rs <span id="p9p">125</span>/-
+                                    </span>
                                 </div>
                                 <img src="./assets/VegExtravaganz.jpg" alt="Corn&Cheese" srcset="">
                             </button>
                             <span class="name"> Veg Extravaganz</span>
                         </div>
                         <div class="sizes">
-                            <button class="small">S</button>
-                            <button class="medium">M</button>
-                            <button class="large">L</button>
+                            <button id="p9s" class="small">S</button>
+                            <button id="p9m" class="medium">M</button>
+                            <button id="p9l" class="large">L</button>
                         </div>
                     </div>
 
@@ -262,10 +281,10 @@
                                     <div class="details">
                                         <span class="type">Type : Fresh Veggie</span>
                                         <hr class="hr>
-                                        <span class="size"> Size:Small</span>
+                                        <span class=" size"> Size:Small</span>
                                         <hr class="hr>
                                     </div>
-                                    <div class="status">
+                                    <div class=" status">
                                         <span>Status:</span>
                                         <div class="dynamic" id="">hi myvhnfcn dfsxhgf gfsdhg name is soubhik biswas
                                         </div>
@@ -311,7 +330,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th class="ncol">Name</th>
-                                        <th  class="scol">Size</th>
+                                        <th class="scol">Size</th>
                                         <th class="pcol">Price</th>
                                     </tr>
                                 </thead>
@@ -328,7 +347,7 @@
                                     </tr>
                                     <tr class="total_r">
                                         <td class="total_c" colspan="2">Total : </td>
-                                    <td class="total_c">300 /-</td>
+                                        <td class="total_c">300 /-</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -341,6 +360,7 @@
 
         </div>
     </div>
+    
 </body>
 
 </html>

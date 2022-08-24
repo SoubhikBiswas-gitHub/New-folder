@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Status Management V2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/6d903a652a.js" crossorigin="anonymous"></script>
-    <script src="./js/index.js" defer></script>
+    <script src="./js/index.js" defer ></script>
+    <script src="./js/createOrder.js" defer ></script>
+    <script src="./js/orderSatus.js"  defer></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
+    <div class="containerk">
+        <div class="_header">
             <div class="header-left">
                 <img src="./assets/Pizza Mart.png" alt="logo" srcset="">
                 <div class="title_d">
@@ -28,27 +31,33 @@
         <hr class="hr">
         <div class="main">
 
+
             <div class="main-outer">
 
+
                 <div class="pizza-type">
+
                     <label class="lbl" for="">Available Items</label>
+
 
                     <!-- **************************** -->
                     <!-- --------Corn & Cheese ----------->
                     <!-- **************************** -->
 
                     <div class="pizza-details">
+                        <input type="checkbox" name="" id="p1BtnClick">
                         <div class="pizza">
-                            <button id="p1Btn"  class="pizza-img">
+                            <button id="p1Btn" class="pizza-img">
                                 <div class="price">
                                     <span>
-                                    <span id="p1si">Small</span>: Rs <span id="p1p">110</span>/-
+                                        <span id="p1si">Small</span>: Rs <span id="p1p">110</span>/-
                                     </span>
                                 </div>
-                                <img src="./assets/Corn&Cheese.jpg" alt="Corn&Cheese" srcset="">
+                                <img id="p1Img" src="./assets/Corn&Cheese.jpg" alt="Corn & Cheese" srcset="">
                             </button>
-                            <span class="name"> Corn & Cheese </span></span>
+                            <button class="cancel" id="p1cancel">Cancel</button>
                         </div>
+                        <span class="name" id="p1n"> Corn & Cheese </span></span>
                         <div class="sizes">
                             <button id="p1s" class="small">S</button>
                             <button id="p1m" class="medium">M</button>
@@ -70,10 +79,12 @@
                                         <span id="p2si">Small</span>: Rs <span id="p2p">160</span>/-
                                     </span>
                                 </div>
-                                <img src="./assets/DeluxeVeggie.jpg" alt="Corn&Cheese" srcset="">
+                                <img src="./assets/DeluxeVeggie.jpg" id="p2Img" alt="Deluxe Veggie" srcset="">
                             </button>
-                            <span class="name"> Deluxe Veggie</span>
+                            <button class="cancel" id="p2cancel">Cancel</button>
+
                         </div>
+                        <span class="name" id="p2n"> Deluxe Veggie</span>
                         <div class="sizes">
                             <button id="p2s" class="small">S</button>
                             <button id="p2m" class="medium">M</button>
@@ -96,10 +107,13 @@
                                         <span id="p3si">Small</span>: Rs <span id="p3p">130</span>/-
                                     </span>
                                 </div>
-                                <img src="./assets/DigitalVeggieParadise.jpg" alt="Corn&Cheese" srcset="">
+                                <img src="./assets/DigitalVeggieParadise.jpg" id="p3Img" alt="Veggie Paradise"
+                                    srcset="">
                             </button>
-                            <span class="name">Veggie Paradise</span>
+                            <button class="cancel" id="p3cancel">Cancel</button>
+
                         </div>
+                        <span class="name" id="p3n">Veggie Paradise</span>
                         <div class="sizes">
                             <button id="p3s" class="small">S</button>
                             <button id="p3m" class="medium">M</button>
@@ -122,10 +136,12 @@
                                         <span id="p4si">Small</span>: Rs <span id="p4p">120</span>/-
                                     </span>
                                 </div>
-                                <img src="./assets/FreshVeggie.jpg" alt="Corn&Cheese" srcset="">
+                                <img src="./assets/FreshVeggie.jpg" id="p4Img" alt="Fresh Veggie" srcset="">
                             </button>
-                            <span class="name"> Fresh Veggie</span>
+                            <button class="cancel" id="p4cancel">Cancel</button>
+
                         </div>
+                        <span class="name" id="p4n"> Fresh Veggie</span>
                         <div class="sizes">
                             <button id="p4s" class="small">S</button>
                             <button id="p4m" class="medium">M</button>
@@ -148,10 +164,12 @@
                                         <span id="p5si">Small</span>: Rs <span id="p5p">180</span>/-
                                     </span>
                                 </div>
-                                <img src="./assets/IndianTandooriPaneer.jpg" alt="Corn&Cheese" srcset="">
+                                <img src="./assets/IndianTandooriPaneer.jpg" id="p5Img" alt="Tandoori Paneer" srcset="">
                             </button>
-                            <span class="name">Tandoori Paneer</span>
+                            <button class="cancel" id="p5cancel">Cancel</button>
+
                         </div>
+                        <span class="name" id="p5n">Tandoori Paneer</span>
                         <div class="sizes">
                             <button id="p5s" class="small">S</button>
                             <button id="p5m" class="medium">M</button>
@@ -174,10 +192,12 @@
                                         <span id="p6si">Small</span>: Rs <span id="p6p">170</span>/-
                                     </span>
                                 </div>
-                                <img src="./assets/MexicanGreenWave.jpg" alt="Corn&Cheese" srcset="">
+                                <img src="./assets/MexicanGreenWave.jpg" id="p6Img" alt="Mexican Green" srcset="">
                             </button>
-                            <span class="name"> Mexican Green</span>
+                            <button class="cancel" id="p6cancel">Cancel</button>
+
                         </div>
+                        <span class="name" id="p6n"> Mexican Green</span>
                         <div class="sizes">
                             <button id="p6s" class="small">S</button>
                             <button id="p6m" class="medium">M</button>
@@ -200,10 +220,12 @@
                                         <span id="p7si">Small</span>: Rs <span id="p7p">140</span>/-
                                     </span>
                                 </div>
-                                <img src="./assets/PaneerMakhni.jpg" alt="Corn&Cheese" srcset="">
+                                <img src="./assets/PaneerMakhni.jpg" id="p7Img" alt="Paneer Makhni" srcset="">
                             </button>
-                            <span class="name">Paneer Makhni </span>
+                            <button class="cancel" id="p7cancel">Cancel</button>
+
                         </div>
+                        <span class="name" id="p7n">Paneer Makhni </span>
                         <div class="sizes">
                             <button id="p7s" class="small">S</button>
                             <button id="p7m" class="medium">M</button>
@@ -226,10 +248,12 @@
                                         <span id="p8si">Small</span>: Rs <span id="p8p">145</span>/-
                                     </span>
                                 </div>
-                                <img src="./assets/Peppy_Paneer.jpg" alt="Corn&Cheese" srcset="">
+                                <img src="./assets/Peppy_Paneer.jpg" id="p8Img" alt="Peppy Paneer" srcset="">
                             </button>
-                            <span class="name"> Peppy Paneer</span>
+                            <button class="cancel" id="p8cancel">Cancel</button>
+
                         </div>
+                        <span class="name" id="p8n"> Peppy Paneer</span>
                         <div class="sizes">
                             <button id="p8s" class="small">S</button>
                             <button id="p8m" class="medium">M</button>
@@ -252,10 +276,12 @@
                                         <span id="p9si">Small</span>: Rs <span id="p9p">125</span>/-
                                     </span>
                                 </div>
-                                <img src="./assets/VegExtravaganz.jpg" alt="Corn&Cheese" srcset="">
+                                <img src="./assets/VegExtravaganz.jpg" id="p9Img" alt="Veg Extravaganz" srcset="">
                             </button>
-                            <span class="name"> Veg Extravaganz</span>
+                            <button class="cancel" id="p9cancel">Cancel</button>
+
                         </div>
+                        <span class="name" id="p9n"> Veg Extravaganz</span>
                         <div class="sizes">
                             <button id="p9s" class="small">S</button>
                             <button id="p9m" class="medium">M</button>
@@ -269,30 +295,31 @@
                 </div>
 
                 <div class="order ">
-                    <div class="create-order">
-                        <label class="lbl" for="">Order Status</label>
+                    <label class="lbl" for="">Order Status</label>
+                    <div class="create-order" id="createOrder">
 
 
 
-                        <div class="order-preview">
+                        <!-- <div class="order-preview">
                             <div class="order-card ">
                                 <div class="order-id">BLRPM1808221530</div>
                                 <div class="order-status">
                                     <div class="details">
                                         <span class="type">Type : Fresh Veggie</span>
-                                        <hr class="hr>
-                                        <span class=" size"> Size:Small</span>
-                                        <hr class="hr>
+                                        <hr>
+                                        <span class="size"> Size:Small</span>
+                                        <hr>
                                     </div>
-                                    <div class=" status">
-                                        <span>Status:</span>
-                                        <div class="dynamic" id="">hi myvhnfcn dfsxhgf gfsdhg name is soubhik biswas
-                                        </div>
+                                    <div class="status">
+                                        <span>Status:</span> <span class="dynamic" id="">Order received</span>
                                     </div>
                                 </div>
                                 <div class="time-date">
-                                    1856146116+5161
+                                    <div id="countDown" class="countDown">Waiting Time <span id="time">00:00</span>
+                                    </div>
+                                    <button class="cncl" id="cncl">Cancel</button>
                                 </div>
+
                             </div>
                         </div>
 
@@ -312,21 +339,46 @@
                                     </div>
                                 </div>
                                 <div class="time-date">
-                                    1856146116+5161
+                                    <div id="countDown" class="countDown">Waiting Time <span id="time">00:00</span>
+                                    </div>
+                                    <button class="cncl" id="cncl">Cancel</button>
                                 </div>
+
                             </div>
                         </div>
 
 
+                        <div class="order-preview" id="newOrderBox">
+                            <div class="order-card ">
+                                <div class="order-id" id="orderId">BLRPM1808221530</div>
+                                <div class="order-status">
+                                    <div class="details">
+                                        <span class="type" id="pType">Type : Fresh Veggie</span>
+                                        <hr>
+                                        <span class="size" id="pSize"> Size:Small</span>
+                                        <hr>
+                                    </div>
+                                    <div class="status">
+                                        <span>Status:</span> 
+                                        <span class="dynamic" id="dynamicOrderStatus">Order received</span>
+                                    </div>
+                                </div>
+                                <div class="time-date">
+                                    <div id="countDown" class="countDown">Waiting Time 
+                                        <span id="time">00:00</span>
+                                    </div>
+                                    <button class="cncl" id="cncl">Cancel</button>
+                                </div>
 
-
+                            </div>
+                        </div> -->
                     </div>
 
 
                     <div class="bill-status">
-                        <div class="bill-card card">
+                        <label class="lbl" for="">Bill Details </label>
+                        <div class="bill-card ">
                             <table>
-                                <label class="lbl" for="">Bill Details </label>
                                 <thead class="thead">
                                     <tr>
                                         <th class="ncol">Name</th>
@@ -356,11 +408,31 @@
                 </div>
             </div>
         </div>
+        <!-- Toasts -->
+
+        <div class="toast cs_alert" role="alert" id="cs_alert" aria-live="assertive" aria-atomic="true"
+            style="position: relative; ">
+            <div class="toast-header">
+                <img src="" class="rounded me-2 tImg" id="tImg" alt="...">
+                <!-- <i class="fa-solid fa-circle-info" class="rounded me-2"></i> -->
+                <strong class="me-auto tTitle" id="tTitle"></strong>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body tParagraph">
+                Please select the size !
+            </div>
+        </div>
+
+        <!-- Toasts -->
         <div class="footer">
 
         </div>
     </div>
-    
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -147,7 +147,7 @@ width: 8rem;
     width: 30%;
     padding: 5px;
     margin: 8px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 35%);
     border-radius: 10px;
 }
 
@@ -401,18 +401,19 @@ width: 8rem;
     border-bottom-right-radius: 10px;
 }
 
-.order-card .time-date .countDown{
+ .time-date .countDown{
+  /* padding-top:3px ; */
     color: #111;
 }
 
-.order-card .time-date #time{
+.time-date .time{
     color: #fff;
     letter-spacing: 2px;
     background: #3120E0;
     padding: 3px;
 border-radius: 5px;
 }
-.order-card .time-date .cncl{
+ .time-date .cncl{
     padding: 3px;
     font-weight: 900;
     border-radius: 5px;
@@ -434,123 +435,7 @@ border: 1px solid #111;
     margin: 0;
 }
 
-.order .bill-status {
 
-    /* justify-content: center; */
-    align-items: center;
-    /* border: 5px solid rgb(8, 0, 255); */
-    width: 100%;
-}
-
-/* .bill-status table{
-    align-items: center;
- } */
-
-/* .bill-status table .ncol,
- .bill-status table .scol,
- .bill-status table .pcol{
-    width:100%;
-    white-space:nowrap;
- } */
-
-
-.bill-status{
-border: 3px ridge #7A4069 ;
-margin: 10px 0;
-border-radius: 10px;
-/* background-image: url(./assets/bg\ remove\ logo.png);
-background-repeat: no-repeat;
-backdrop-filter: blur(5px);
-background-position: center; */
-
-background: rgb(218,162,255);
-background: linear-gradient(90deg, rgba(218,162,255,0.6) 0%, rgba(255,189,189,0.5) 50%, rgba(255,255,255,0.5) 100%);
-}
-
-
- .bill-card {
-display: flex;
-justify-content: center;
-
-
- }
-
-
-table {
-    width: 90%;
-}
-
-tr {
-    align-items: center;
-}
-
-td {
-    width: 30%;
-    white-space: nowrap;
-    text-align: center;
-}
-
-.total_r {
-    border-top: 2px solid red;
-}
-
-table,
-th,
-td {
-    /* width: 100%; */
-    padding: 5px;
-    border-collapse: collapse;
-}
-
-th {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 900;
-    text-decoration: underline;
-    color: #D61C4E;
-}
-
-td {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #990000;
-}
-
-.total_c {
-    font-size: 1.8rem;
-    color: #541690;
-}
-
-.lbl {
-    margin: 10px;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    color: #590696;
-    font-size: 3rem;
-    font-weight: 900;
-}
-
-.cancel{
-    display: none;
-    background: red;
-    border: 2px solid black;
-    width:10rem;
-    border-radius: 8px;
-    font-size: 2.1rem;
-    font-weight: 900;
-    text-align: center;
-    transition: ease-in-out 0.3s;
-    cursor: pointer;
-}
-
-.cancel:hover{
-border-color: #111;
-color: red;
-background-color: #fff;
-}
 
 
 

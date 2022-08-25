@@ -9,9 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="./js/index.js" defer ></script>
+    <!-- <script src="./js/index.js" defer ></script>
     <script src="./js/createOrder.js" defer ></script>
-    <script src="./js/orderSatus.js"  defer></script>
+    <script src="./js/orderSatus.js"  defer></script> -->
 </head>
 
 <body>
@@ -30,11 +30,10 @@
         </div>
         <hr class="hr">
         <div class="main">
-
-
             <div class="main-outer">
-
-
+                <!-- ****************************
+                *****Pizza Type*************
+                **************************** -->
                 <div class="pizza-type">
 
                     <label class="lbl" for="">Available Items</label>
@@ -293,12 +292,12 @@
                     <!-- --------Veg Extravaganz ----------->
                     <!-- **************************** -->
                 </div>
-
+                 <!-- ****************************
+                *****Order Create*************
+                **************************** -->
                 <div class="order ">
                     <label class="lbl" for="">Order Status</label>
                     <div class="create-order" id="createOrder">
-
-
 
                         <!-- <div class="order-preview">
                             <div class="order-card ">
@@ -315,68 +314,36 @@
                                     </div>
                                 </div>
                                 <div class="time-date">
-                                    <div id="countDown" class="countDown">Waiting Time <span id="time">00:00</span>
-                                    </div>
-                                    <button class="cncl" id="cncl">Cancel</button>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="order-preview">
-                            <div class="order-card ">
-                                <div class="order-id">BLRPM1808221530</div>
-                                <div class="order-status">
-                                    <div class="details">
-                                        <span class="type">Type : Fresh Veggie</span>
-                                        <hr>
-                                        <span class="size"> Size:Small</span>
-                                        <hr>
-                                    </div>
-                                    <div class="status">
-                                        <span>Status:</span> <span class="dynamic" id="">Order received</span>
-                                    </div>
-                                </div>
-                                <div class="time-date">
-                                    <div id="countDown" class="countDown">Waiting Time <span id="time">00:00</span>
-                                    </div>
-                                    <button class="cncl" id="cncl">Cancel</button>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="order-preview" id="newOrderBox">
-                            <div class="order-card ">
-                                <div class="order-id" id="orderId">BLRPM1808221530</div>
-                                <div class="order-status">
-                                    <div class="details">
-                                        <span class="type" id="pType">Type : Fresh Veggie</span>
-                                        <hr>
-                                        <span class="size" id="pSize"> Size:Small</span>
-                                        <hr>
-                                    </div>
-                                    <div class="status">
-                                        <span>Status:</span> 
-                                        <span class="dynamic" id="dynamicOrderStatus">Order received</span>
-                                    </div>
-                                </div>
-                                <div class="time-date">
-                                    <div id="countDown" class="countDown">Waiting Time 
-                                        <span id="time">00:00</span>
-                                    </div>
+                                   <div class="countDown" id="countDown">
+                                    <div class="txt"> Waiting Time</div>
+                                    
+                                    <div class="time" id="time">00:00</div>
+                                   </div>
+                                    
                                     <button class="cncl" id="cncl">Cancel</button>
                                 </div>
 
                             </div>
                         </div> -->
+
                     </div>
-
-
+                </div>
+                 <!-- ****************************
+                *****Bill Generator*************
+                **************************** -->
+                <div class="billGenerator">
                     <div class="bill-status">
                         <label class="lbl" for="">Bill Details </label>
+                        <div class="customerDetails">
+                            <label class="lbl1" for="">Customer Name </label>
+                            <label class="lbl2" for="">Customer Name </label>
+                        </div>
+
+                        <div class="billingTime">
+                            <label class="lbl1" for="">Time </label>
+                            <label class="lbl2" for="">Time </label>
+                        </div>
+
                         <div class="bill-card ">
                             <table>
                                 <thead class="thead">
@@ -386,6 +353,7 @@
                                         <th class="pcol">Price</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     <tr>
                                         <td class="ncol">Deluxe Veggie</td>
@@ -408,8 +376,12 @@
                 </div>
             </div>
         </div>
-        <!-- Toasts -->
 
+
+
+
+
+        <!-- Toasts -->
         <div class="toast cs_alert" role="alert" id="cs_alert" aria-live="assertive" aria-atomic="true"
             style="position: relative; ">
             <div class="toast-header">
@@ -422,13 +394,14 @@
                 Please select the size !
             </div>
         </div>
-
         <!-- Toasts -->
         <div class="footer">
 
         </div>
     </div>
-   
+    <script src="./js/createOrder.js"></script>
+    <script src="./js/orderSatus.js"></script>
+    <script src="./js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>

@@ -10,18 +10,27 @@ html {
     font-size: 62.5%;
 }
 
-#p1BtnClick {
+#p1BtnClick,
+#p2BtnClick,
+#p3BtnClick,
+#p4BtnClick,
+#p5BtnClick,
+#p6BtnClick,
+#p7BtnClick,
+#p8BtnClick,
+#p9BtnClick{
     display: none;
 }
 
 /* bootstrap css */
 .cs_alert {
     position: static;
-    background-color: #d907ab;
+    background-color: #07d988;
     top: 0;
     right: 0;
     z-index: 1;
-    border-radius: 30px;
+    border-radius: 10px;
+    width: 30%;
 }
 
 .tTitle {
@@ -30,9 +39,9 @@ html {
 }
 
 .tParagraph {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #fff;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111;
 }
 
 .tImg {
@@ -348,6 +357,7 @@ html {
     padding: 3px 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    
 }
 
 .order .order-card .order-status {
@@ -455,6 +465,8 @@ html {
     font-weight: 900;
     background-color: #f3e1fcc9;
     border-radius: 25px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 35%);
+
 }
 
 .cancel {
@@ -538,7 +550,7 @@ html {
 .billcreate .content_1 {
     font-size: 1.4rem;
     font-weight: 900;
-    color: #06283D;
+    color: #051367;
 }
 
 .billcreate .content_1 label {
@@ -608,7 +620,7 @@ html {
 .billSummary .todaySummery li {
     font-size: 1.5rem;
     font-weight: 900;
-    color: #7C3E66;
+    color: #630606;
 }
 
 .billSummary .todaySummery li {
@@ -627,6 +639,12 @@ html {
     transition: ease-in 0.3s;
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 35%);
 
+}
+
+.billSummary .todaySummery .summaryDetails:hover{
+    color: #009f6f ;
+    border:2px solid #111;
+    background: wheat;
 }
 
 .billSummary .todaySummery {

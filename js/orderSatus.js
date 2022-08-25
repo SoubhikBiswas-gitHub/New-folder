@@ -1,7 +1,8 @@
+// let dynamicOrderStatus=document.getElementById(dynamicOrderStatus);
 const chefReceived = (dynamicOrderStatus) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			document.getElementById(dynamicOrderStatus).innerText = 'Chef Received'
+			dynamicOrderStatus.textContent = 'Chef Received'
 			resolve(dynamicOrderStatus)
 		}, 2000)
 	})
@@ -10,7 +11,7 @@ const chefReceived = (dynamicOrderStatus) => {
 const pizzaSauceAdded = (dynamicOrderStatus) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			document.getElementById(dynamicOrderStatus).innerText = 'Pizza Sauce added'
+			dynamicOrderStatus.textContent = 'Pizza Sauce added'
 			resolve(dynamicOrderStatus)
 		}, 10000)
 	})
@@ -19,7 +20,7 @@ const pizzaSauceAdded = (dynamicOrderStatus) => {
 const firstLayerOfCheezeAdded = (dynamicOrderStatus) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			document.getElementById(dynamicOrderStatus).innerText = 'First layer of cheeze added'
+			dynamicOrderStatus.textContent = 'First layer of cheeze added'
 			resolve(dynamicOrderStatus)
 		}, 5000)
 	})
@@ -28,7 +29,7 @@ const firstLayerOfCheezeAdded = (dynamicOrderStatus) => {
 const toppingsAdded = (dynamicOrderStatus) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			document.getElementById(dynamicOrderStatus).innerText = 'Toppings added'
+			dynamicOrderStatus.textContent = 'Toppings added'
 			resolve(dynamicOrderStatus)
 		}, 12000)
 	})
@@ -37,7 +38,7 @@ const toppingsAdded = (dynamicOrderStatus) => {
 const secondLayerOfCheezeAdded = (dynamicOrderStatus) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			document.getElementById(dynamicOrderStatus).innerText = 'Second layer of cheeze added'
+			dynamicOrderStatus.textContent = 'Second layer of cheeze added'
 			resolve(dynamicOrderStatus)
 		}, 5000)
 	})
@@ -46,7 +47,7 @@ const secondLayerOfCheezeAdded = (dynamicOrderStatus) => {
 const pizzaBaked = (dynamicOrderStatus) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			document.getElementById(dynamicOrderStatus).innerText = 'Pizza baked!'
+			dynamicOrderStatus.textContent = 'Pizza baked!'
 			resolve(dynamicOrderStatus)
 		}, 15000)
 	})
@@ -55,7 +56,7 @@ const pizzaBaked = (dynamicOrderStatus) => {
 const oreganoAddedAndPacked = (dynamicOrderStatus) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			document.getElementById(dynamicOrderStatus).innerText = 'Oregano added and packed'
+			dynamicOrderStatus.textContent = 'Oregano added and packed'
 			resolve(dynamicOrderStatus)
 		}, 8000)
 	})
@@ -64,7 +65,7 @@ const oreganoAddedAndPacked = (dynamicOrderStatus) => {
 const packageReceivedAtCounter = (dynamicOrderStatus) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			document.getElementById(dynamicOrderStatus).innerText = 'Package received at counter'
+			dynamicOrderStatus.textContent = 'Package received at counter'
 			resolve()
 		}, 2000)
 	})

@@ -1,6 +1,7 @@
 // ***********************************************
 // **** order-preview Component Create function *********
 // ***********************************************
+
 const createElement = (orderId, Ptype, Psize) => {
   const orderPreviewDiv = document.createElement("div");
   orderPreviewDiv.setAttribute("class", "order-preview");

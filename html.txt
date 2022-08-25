@@ -1,0 +1,47 @@
+<table>
+                                <thead class="thead">
+                                    <tr>
+                                        <th class="ncol">Name</th>
+                                        <th class="scol">Size</th>
+                                        <th class="pcol">Price</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td class="ncol">Deluxe Veggie</td>
+                                        <td class="scol">Small</td>
+                                        <td class="pcol">150 /-</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ncol">Deluxe Veggie</td>
+                                        <td class="scol">Small</td>
+                                        <td class="pcol">150 /-</td>
+                                    </tr>
+                                    <tr class="total_r">
+                                        <td class="total_c" colspan="2">Total : </td>
+                                        <td class="total_c">300 /-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+
+                            ***********************************************************************
+
+                            <!-- <div class="bill-status">
+                        
+                        <div class="customerDetails">
+                            <label class="lbl1" for="">Customer Name </label>
+                            <label class="lbl2" for="">Customer Name </label>
+                        </div>
+
+                        <div class="billingTime">
+                            <label class="lbl1" for="">Time </label>
+                            <label class="lbl2" for="">Time </label>
+                        </div>
+
+                        <div class="bill-card ">
+                            
+                        </div>
+                    </div> -->

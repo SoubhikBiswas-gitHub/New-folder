@@ -48,6 +48,7 @@ const createElement = (orderId, Ptype, Psize) => {
   detailsDiv.appendChild(hr2);
   const statusSpan = document.createElement("span");
   const dynamicSpan = document.createElement("span");
+  const readyStatus = document.createElement("img");
   statusSpan.setAttribute("id", "statusSpan");
   dynamicSpan.setAttribute("id", "dynamicOrderStatus");
   dynamicSpan.setAttribute("class", "dynamic");
@@ -73,7 +74,7 @@ const createElement = (orderId, Ptype, Psize) => {
   dynamicSpan.textContent = "Order Placed";
   timeSpan.textContent = "00:00";
 
-   //*****************************/
+  //*****************************/
   //*****Waiting Time Function***********/
   //*****************************/
 
@@ -86,14 +87,23 @@ const createElement = (orderId, Ptype, Psize) => {
     Sec = Sec < 10 ? "0" + Sec : Sec;
     min = min < 10 ? "0" + min : min;
     timeSpan.textContent = `${min}:${Sec}`;
-    if(Sec==00&&min==00){
+    if (Sec == 00 && min == 00) {
       clearInterval(resetInterval);
       timeSpan.textContent = `00:00`;
+      dynamicSpan.style.display = "none";
+      statusSpan.style.display = "none";
+      statusDiv.appendChild(readyStatus);
+      readyStatus.src = "./assets/readyOrder.gif";
+      readyStatus.style.width = "70%";
+      if (allPizzaReadyCheckingCounter === OrderReadyCheckingArray.length) {
+        billGenerateBtn.style.display = "block";
+        billGenerateButtonClickCheck = false;
+      }
     }
     startSec--;
   }
 
-  
+
   //*****************************/
   //*****Promise Function***********/
   //*****************************/
@@ -106,16 +116,14 @@ const createElement = (orderId, Ptype, Psize) => {
     .then(pizzaBaked)
     .then(oreganoAddedAndPacked)
     .then(packageReceivedAtCounter)
-    .then(
-      () => (dynamicOrderStatus.textContent = "Package received at counter")
-    )
+    .then(() => {
+      dynamicOrderStatus.textContent = "Package received at counter";
+      OrderReadyCheckingArray.push(true);
+    })
     .catch((err) => (dynamicOrderStatus.textContent = `${err}`));
 
-
-  
   //*****************************/
   //*****Returning Parent Div***********/
   //*****************************/
   return orderPreviewDiv;
 };
-

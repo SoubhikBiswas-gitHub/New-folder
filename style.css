@@ -395,12 +395,12 @@ html {
 
 .order-status .status .dynamic {
     font-family: 'Roboto', sans-serif;
-    padding: 0 3px;
+    padding: 3px 3px;
     border-radius: 5px;
-    /* font-size: 10em; */
+   word-spacing: 3px;
     background-color: #2A0944;
-    /* background-color: #9cf02d; */
     color: #ffa16f;
+    margin: 2px;
 }
 
 .order .order-card .time-date {
@@ -447,8 +447,32 @@ html {
     color: red;
     border: 1px solid #111;
 }
+ 
 
-.hr {
+.order .generateBill{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+width: 100%;
+}
+
+.order .generateBill .generateBillBtn{
+padding: 2px;
+font-size: 3rem;
+font-weight: 900;
+border-radius: 5px;
+background: #21E1E1;
+transition: ease-in 0.3s;
+display: none;
+}
+
+.order .generateBill .generateBillBtn:hover{
+background: #256D85;
+color: #fff;
+
+}
+
+.hr{
     padding: 1px;
     border-bottom: 1px solid #2A0944;
     margin: 0;
@@ -518,12 +542,9 @@ html {
     border-radius: 5px;
     background: url(./assets/logo\ opacity.png);
     background-size: contain;
-    /* no-repeat fixed center */
     background-repeat: no-repeat;
     background-position: center;
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 35%);
-
-
 }
 
 .billDiv .billcreate .billheader {
@@ -579,6 +600,45 @@ html {
 
 }
 
+ .billTotal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+margin-bottom: 3px ;
+
+}
+
+ .billTotal .txtTotal{
+    width: 50%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #472D2D;
+}
+ .billTotal .amtTotal{
+    width: 25%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #293462;
+}
+
+.billTotal .txtTotal_{
+    width: 45%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #472D2D;
+}
+ .billTotal .amtTotal_{
+    width: 45%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #293462;
+}
+
 .billDiv .billSummary {
     display: flex;
     flex-direction: column;
@@ -594,18 +654,23 @@ html {
     width: 100%;
 }
 
+.billSummary .syummeryOfDay .outer_ {
+    border: 2px solid #541690;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 35%);
+    
+}
 
 .billSummary .syummeryOfDay .lastOderHistory {
     width: 100%;
-    border: 2px solid #541690;
-    border-radius: 5px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 35%);
 
 }
+
+
 
 .syummeryOfDay .lastOderHistory label,
 .billSummary .todaySummery label {

@@ -4,6 +4,9 @@
 //oder div Selector
 const createOrderDiv = document.getElementById("createOrder");
 
+//bill Generator Button
+const billGenerateBtn = document.getElementById("generateBillBtn");
+
 //cs_alert Selector
 
 const cs_alert = document.getElementById("cs_alert");
@@ -117,6 +120,17 @@ const p8CancelBtn = document.getElementById("p8cancel");
 const p9CancelBtn = document.getElementById("p9cancel");
 //Canel Button
 
+//Bill Items Select
+const billCustomerName = document.getElementById("billCustomerNamelbl");
+const billDateTimelbl = document.getElementById("billCustomerNamelbl");
+const billPizzaTypesList = document.getElementById("billPizzaTypesList");
+const billPizzaSizesList = document.getElementById("billPizzaSizesList");
+const billPizzaQtysList = document.getElementById("billPizzaQtysList");
+const billPizzaPricesList = document.getElementById("billPizzaPricesList");
+const billTotal = document.getElementById("billTotal");
+const billPrintBtn = document.getElementById("billPrintBtn");
+//Bill Items Select
+
 // ***********************************************
 // ************** Element Selector *********************
 // ***********************************************
@@ -124,6 +138,16 @@ const p9CancelBtn = document.getElementById("p9cancel");
 // ***********************************************
 // **** Global Variable *********
 // ***********************************************
+
+let customerNameAvalityCheck = false;
+let customerName = "";
+
+let orderDetailsArray = [];
+let createOrderDetailsObj = {};
+let OrderReadyCheckingArray = [];
+let allPizzaReadyCheckingCounter = 0;
+let billGenerateButtonClickCheck = true;
+
 //Image Source :
 const p1ImgSrc = p1Img.src;
 const p2ImgSrc = p2Img.src;
@@ -235,18 +259,58 @@ p9Btn.addEventListener("click", () => {
 // ***********************************************
 //Size & Price Change Clickz Event
 p1sBtn.addEventListener("click", () => {
-  p1Price.textContent = "110";
+  p1Price.textContent = 110;
   p1Size.textContent = "Small";
-  if (p1BtnCheck.checked) {
-    const p1SizeValue = p1Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+  if (billGenerateButtonClickCheck) {
+    if (p1BtnCheck.checked) {
+      if (customerNameAvalityCheck) {
+        const p1SizeValue = p1Size.textContent;
+        const p1PriceValue = p1Price.textContent;
+        const oId = orderIdGenerator();
+        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
+        createOrderDiv.appendChild(orderPreviewDiv);
+        checkBoxUnchacked();
+        cancelBtnHide();
+        pointerEventSetDefault();
+        let tempObj = saveAllDataIntoArray(
+          p1PizzaName,
+          p1SizeValue,
+          p1PriceValue
+        );
+        // orderDetailsArray.push(tempObj);
+        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
+        allPizzaReadyCheckingCounter++;
+      } else {
+        while (!customerName) {
+          customerName = prompt("Please Enter The Customer Name ");
+        }
+        const p1SizeValue = p1Size.textContent;
+        const p1PriceValue = p1Price.textContent;
+        const p1QtyValue = 1;
+        const oId = orderIdGenerator();
+        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
+        createOrderDiv.appendChild(orderPreviewDiv);
+        checkBoxUnchacked();
+        cancelBtnHide();
+        pointerEventSetDefault();
+        let tempObj = saveAllDataIntoArray(
+          p1PizzaName,
+          p1SizeValue,
+          p1QtyValue,
+          p1PriceValue
+        );
+        // orderDetailsArray.push(tempObj);
+        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
+        allPizzaReadyCheckingCounter++;
+      }
+    } else {
+      pizzaSelectAlert();
+      checkBoxUnchacked();
+      cancelBtnHide();
+      pointerEventSetDefault();
+    }
   } else {
-    pizzaSelectAlert();
+    billGenerateAlert();
     checkBoxUnchacked();
     cancelBtnHide();
     pointerEventSetDefault();
@@ -754,30 +818,63 @@ p9lBtn.addEventListener("click", () => {
 // **** Size & Price Change Clickz Event *********
 // ***********************************************
 
+// ***********************************************
+// **** Bill Generate Clickz Event *********
+// ***********************************************
+billGenerateBtn.addEventListener("click", () => {
+  customerNameAvalityCheck = false;
+  billGenerateButtonClickCheck = true;
+  customerName = "";
+  allPizzaReadyCheckingCounter = 0;
+  OrderReadyCheckingArray = [];
+  checkBoxUnchacked();
+  cancelBtnHide();
+  pointerEventSetDefault();
+  allChildFromParentFunction(createOrderDiv);
+  var billDateTime = billDateTimeGenerator();
+  // console.log(orderDetailsArray)
+  billGenerator(orderDetailsArray, customerName, billDateTime);
+});
+
+// ***********************************************
+// **** Bill Generate Clickz Event *********
+// ***********************************************
 
 // ***********************************************
 // **** Cancel Button Clickz Event *********
 // ***********************************************
 
-p1CancelBtn.addEventListener("click",()=>checkBoxUnchackedCancelBtnHideEvent())
-p2CancelBtn.addEventListener("click",()=>checkBoxUnchackedCancelBtnHideEvent())
-p3CancelBtn.addEventListener("click",()=>checkBoxUnchackedCancelBtnHideEvent())
-p4CancelBtn.addEventListener("click",()=>checkBoxUnchackedCancelBtnHideEvent())
-p5CancelBtn.addEventListener("click",()=>checkBoxUnchackedCancelBtnHideEvent())
-p6CancelBtn.addEventListener("click",()=>checkBoxUnchackedCancelBtnHideEvent())
-p7CancelBtn.addEventListener("click",()=>checkBoxUnchackedCancelBtnHideEvent())
-p8CancelBtn.addEventListener("click",()=>checkBoxUnchackedCancelBtnHideEvent())
-p9CancelBtn.addEventListener("click",()=>checkBoxUnchackedCancelBtnHideEvent())
-
+p1CancelBtn.addEventListener("click", () =>
+  checkBoxUnchackedCancelBtnHideEvent()
+);
+p2CancelBtn.addEventListener("click", () =>
+  checkBoxUnchackedCancelBtnHideEvent()
+);
+p3CancelBtn.addEventListener("click", () =>
+  checkBoxUnchackedCancelBtnHideEvent()
+);
+p4CancelBtn.addEventListener("click", () =>
+  checkBoxUnchackedCancelBtnHideEvent()
+);
+p5CancelBtn.addEventListener("click", () =>
+  checkBoxUnchackedCancelBtnHideEvent()
+);
+p6CancelBtn.addEventListener("click", () =>
+  checkBoxUnchackedCancelBtnHideEvent()
+);
+p7CancelBtn.addEventListener("click", () =>
+  checkBoxUnchackedCancelBtnHideEvent()
+);
+p8CancelBtn.addEventListener("click", () =>
+  checkBoxUnchackedCancelBtnHideEvent()
+);
+p9CancelBtn.addEventListener("click", () =>
+  checkBoxUnchackedCancelBtnHideEvent()
+);
 
 // ***********************************************
 // **** Cancel Button Clickz Event Clickz Event *********
 // ***********************************************
-
-
-
-
-
 
 // ***********************************************
 // **** Utility Function *********
@@ -797,14 +894,29 @@ let cancelBtnVisible = (cancelBtn, ParentBtn, imgSrc, title) => {
 
 let pizzaSelectAlert = () => {
   cs_alert.style.display = "block";
-  cs_alert.style.backgroundColor = "#FF4A4A";
+  cs_alert.style.backgroundColor = "#5800FF";
   cs_tTitle.textContent = "Pizza Mart !!";
   cs_tParagraph.textContent = "To Create Order Please Select Pizza First !!";
+  cs_tImg.src = "./assets/Pizza Mart.png";
+  cs_tParagraph.style.color = "#fff";
+  setTimeout(() => {
+    cs_alert.style.display = "none";
+    cs_tParagraph.textContent = " Please select the size !";
+    cs_alert.style.backgroundColor = "#7DCE13";
+  }, 4000);
+};
+
+let billGenerateAlert = () => {
+  cs_alert.style.display = "block";
+  cs_alert.style.backgroundColor = "#FF4A4A";
+  cs_tTitle.textContent = "Pizza Mart !!";
+  cs_tParagraph.textContent =
+    "To Create New Order Please Click Bill Button & Generate Bill First!!";
   cs_tImg.src = "./assets/Pizza Mart.png";
   setTimeout(() => {
     cs_alert.style.display = "none";
     cs_tParagraph.textContent = " Please select the size !";
-    cs_alert.style.backgroundColor = "#07d988";
+    cs_alert.style.backgroundColor = "#7DCE13";
   }, 4000);
 };
 
@@ -860,10 +972,67 @@ const orderIdGenerator = () => {
   return `${hour}${min}${sec}-${date}${month}${year}`;
 };
 
-const checkBoxUnchackedCancelBtnHideEvent=()=>{
-    cancelBtnHide();
-    checkBoxUnchacked();
-}
+const billDateTimeGenerator = () => {
+  const timeNow = new Date();
+  let year = timeNow.getFullYear();
+  let month = timeNow.getMonth() + 1;
+  let date = timeNow.getDate();
+  let hour = timeNow.getHours();
+  let min = timeNow.getMinutes();
+  let sec = timeNow.getSeconds();
+  month = month < 10 ? "0" + month : month;
+  date = date < 10 ? "0" + date : date;
+  hour = hour < 10 ? "0" + hour : hour;
+  min = min < 10 ? "0" + min : min;
+  sec = sec < 10 ? "0" + sec : sec;
+  return ` ${date}/${month}/${year} ${hour}:${min}:${sec}`;
+};
+
+const checkBoxUnchackedCancelBtnHideEvent = () => {
+  cancelBtnHide();
+  checkBoxUnchacked();
+};
+
+const saveAllDataIntoArray = (PizzaName, SizeValue, QtyValue, PriceValue) => {
+  let createOrderDetailsObj = {
+    PizzaName,
+    SizeValue,
+    QtyValue,
+    PriceValue,
+  };
+  return createOrderDetailsObj;
+};
+
+const allChildFromParentFunction = (Parent) => {
+  while (Parent.firstChild) {
+    Parent.removeChild(Parent.firstChild);
+  }
+  // or
+  //parent.innerHTML = '';
+};
+
+const pizzaQtyValueUpdater = (tempOrderObj, orderDetailsArray) => {
+  let { PizzaName, SizeValue, QtyValue, PriceValue } = tempOrderObj;
+  if (orderDetailsArray.length === 0) {
+    orderDetailsArray.push(tempOrderObj);
+  } else {
+    for (newObj of orderDetailsArray) {
+      if (newObj["PizzaName"] === PizzaName) {
+        if (newObj["SizeValue"] === SizeValue) {
+          newObj["QtyValue"]++,
+          newObj["PriceValue"]=parseInt(PriceValue) *parseInt(newObj["QtyValue"]) ;
+        } else {
+          orderDetailsArray.push(tempOrderObj);
+        }
+      } else {
+        orderDetailsArray.push(tempOrderObj);
+      }
+    }
+  }
+  console.log(orderDetailsArray);
+};
+// console.log(createOrderDetailsObj)
+// console.log(orderDetailsArray)
 // ***********************************************
 // **** Utility Function *********
 // ***********************************************

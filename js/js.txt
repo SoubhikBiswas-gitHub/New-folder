@@ -127,3 +127,14 @@ const childAdding=()=>{
   timeSpan.setAttribute("id", "time");
   countDownDiv.appendChild(timeSpan);
   console.log(orderPreviewDiv);
+
+
+
+ if (billGenerateButtonClickCheck) {
+
+   } else {
+    billGenerateAlert();
+    checkBoxUnchacked();
+    cancelBtnHide();
+    pointerEventSetDefault();
+  }

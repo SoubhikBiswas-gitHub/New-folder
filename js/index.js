@@ -151,19 +151,27 @@ const TDSBillTotal = document.getElementById("tdsBillTotal");
 // ***********************************************
 // **** Global Variable *********
 // ***********************************************
-
+//before execute name availibily check
 let customerNameAvalityCheck = false;
-let customerName = "";
 
+let customerName = "";
+//Store all order detail insiide object before print
 let orderDetailsArray = [];
+//store one pizza order detail before print
 let createOrderDetailsObj = {};
+//it will store all order process/after complete successful order push true --control timer function 
 let OrderReadyCheckingArray = [];
+//order executer counter- control timer function 
 let allPizzaReadyCheckingCounter = 0;
+//click event check for bill generate button- control timer function 
 let billGenerateButtonClickCheck = true;
+// pass the biiling all element node to loh and sod 
 let billPrintDynamicArray = [];
-let toDayOrderSummeryArray = [];
+//click event check for bill print button
 let printBtnClickCheck = true;
+//whole day summary array
 let todayOrderSummaryArray = [];
+//whole day summary object
 let summaryDayObj = {};
 
 //Image Source :
@@ -279,7 +287,7 @@ p9Btn.addEventListener("click", () => {
 p1sBtn.addEventListener("click", () => {
   p1Price.textContent = 110;
   p1Size.textContent = "Small";
-  if (billGenerateButtonClickCheck) {
+  
     if (p1BtnCheck.checked) {
       if (customerNameAvalityCheck) {
         const p1SizeValue = p1Size.textContent;
@@ -296,8 +304,6 @@ p1sBtn.addEventListener("click", () => {
           QtyValue: 1,
           PriceValue: p1PriceValue,
         };
-        // orderDetailsArray.push(tempObj);
-        // orderDetailsArray=pizzaQtyValueUpdater(tempObj, orderDetailsArray);
         pizzaQtyValueUpdater(tempObj, orderDetailsArray);
         tempObj = {};
         allPizzaReadyCheckingCounter++;
@@ -320,7 +326,6 @@ p1sBtn.addEventListener("click", () => {
           QtyValue: 1,
           PriceValue: p1PriceValue,
         };
-        // orderDetailsArray.push(tempObj);
         pizzaQtyValueUpdater(tempObj, orderDetailsArray);
 
         tempObj = {};
@@ -332,12 +337,7 @@ p1sBtn.addEventListener("click", () => {
       cancelBtnHide();
       pointerEventSetDefault();
     }
-  } else {
-    billGenerateAlert();
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
-  }
+ 
 });
 
 p1mBtn.addEventListener("click", () => {
@@ -357,6 +357,7 @@ p1mBtn.addEventListener("click", () => {
   //   cancelBtnHide();
   //   pointerEventSetDefault();
   // }
+
   if (billGenerateButtonClickCheck) {
     if (p1BtnCheck.checked) {
       if (customerNameAvalityCheck) {
@@ -374,7 +375,6 @@ p1mBtn.addEventListener("click", () => {
           QtyValue: 1,
           PriceValue: p1PriceValue,
         };
-        // orderDetailsArray.push(tempObj);
         pizzaQtyValueUpdater(tempObj, orderDetailsArray);
 
         tempObj = {};
@@ -398,7 +398,6 @@ p1mBtn.addEventListener("click", () => {
           QtyValue: 1,
           PriceValue: p1PriceValue,
         };
-        // orderDetailsArray.push(tempObj);
         pizzaQtyValueUpdater(tempObj, orderDetailsArray);
 
         tempObj = {};
@@ -438,6 +437,7 @@ p1lBtn.addEventListener("click", () => {
   //   cancelBtnHide();
   //   pointerEventSetDefault();
   // }
+
   if (billGenerateButtonClickCheck) {
     if (p1BtnCheck.checked) {
       if (customerNameAvalityCheck) {
@@ -455,7 +455,6 @@ p1lBtn.addEventListener("click", () => {
           QtyValue: 1,
           PriceValue: p1PriceValue,
         };
-        // orderDetailsArray.push(tempObj);
         pizzaQtyValueUpdater(tempObj, orderDetailsArray);
 
         tempObj = {};
@@ -479,7 +478,6 @@ p1lBtn.addEventListener("click", () => {
           QtyValue: 1,
           PriceValue: p1PriceValue,
         };
-        // orderDetailsArray.push(tempObj);
         pizzaQtyValueUpdater(tempObj, orderDetailsArray);
         tempObj = {};
         allPizzaReadyCheckingCounter++;
@@ -964,14 +962,7 @@ p9lBtn.addEventListener("click", () => {
 billGenerateBtn.addEventListener("click", () => {
   var billDateTime = billDateTimeGenerator();
   //before adding removing child from bill
-  billCustomerName.removeChild(billCustomerName.firstChild)
-  billDateTimelbl.removeChild(billDateTimelbl.firstChild)
-  allChildRemoveFromParentFunction(billPizzaTypesList)
-  allChildRemoveFromParentFunction(billPizzaSizesList)
-  allChildRemoveFromParentFunction(billPizzaQtysList)
-  allChildRemoveFromParentFunction(billPizzaPricesList)
-  billTotal.removeChild(billTotal.firstChild)
-
+  
   billGenerator(orderDetailsArray, customerName, billDateTime);
   allChildRemoveFromParentFunction(createOrderDiv);
   printBtnClickCheck = false;
@@ -998,12 +989,12 @@ billPrintBtn.addEventListener("click", () => {
   let tempArray = [];
   let totalSum = 0;
   let todayTotalSum = 0;
-  //Reemoving value to summary of the day
+  //Removing value to summary of the day..
   allChildRemoveFromParentFunction(LOHPizzaDetails);
   allChildRemoveFromParentFunction(LOHPizzaPricesDetails);
-  LOHtotalBill.removeChild(LOHtotalBill.firstChild);
-  //adding value to summary of the day
-  //colone node of customer bill full and append by todays full summary node
+  LOHtotalBill.removeChild(LOHtotalBill.lastChild);
+  //colone node of customer bill full and append by todays full summary node..
+  //Adding value to summary of the day..
   for (let i = 0; i < billPrintDynamicArray.length; i = i + 4) {
     for (let j = i; j < i + 3 && j < billPrintDynamicArray.length; j++) {
       let val = billPrintDynamicArray[j].textContent;
@@ -1030,7 +1021,7 @@ billPrintBtn.addEventListener("click", () => {
  //Reemoving value to summary of the day
  allChildRemoveFromParentFunction(TDSPizzaDetails);
  allChildRemoveFromParentFunction(TDSPizzaPrices);
- TDSBillTotal.removeChild(TDSBillTotal.firstChild);
+ TDSBillTotal.removeChild(TDSBillTotal.lastChild);
 
   //updating value to summary of the day
   for (let item of todayOrderSummaryArray) {
@@ -1049,6 +1040,29 @@ billPrintBtn.addEventListener("click", () => {
   TDSBillTotal.appendChild(TotalP_);
   billPrintDynamicArray = [];
   summaryDayObj = {};
+
+  //removing the billing all element..
+  billCustomerName.removeChild(billCustomerName.lastChild);
+  billDateTimelbl.removeChild(billDateTimelbl.lastChild);
+  allChildRemoveFromParentFunction(billPizzaTypesList);
+  allChildRemoveFromParentFunction(billPizzaSizesList);
+  allChildRemoveFromParentFunction(billPizzaQtysList);
+  allChildRemoveFromParentFunction(billPizzaPricesList);
+  billTotal.removeChild(billTotal.lastChild);
+
+
+  //all global value resetting
+  customerNameAvalityCheck=false;
+  customerName="";
+  allPizzaReadyCheckingCounter=0;
+  orderDetailsArray=[];
+  createOrderDetailsObj={};
+  OrderReadyCheckingArray=[];
+  billPrintDynamicArray=[];
+  billGenerateButtonClickCheck=true;
+  printBtnClickCheck = true;
+
+
 });
 // ***********************************************
 // **** Bill Print Clickz Event *********

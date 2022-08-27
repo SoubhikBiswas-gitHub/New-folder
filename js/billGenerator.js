@@ -58,5 +58,7 @@ OrderDetailsArray=[];
 billGenerateBtn.style.display = "none";
 OrderDetailsArray="";
 billGenerateButtonClickCheck=true;
-
+allPizzaReadyCheckingCounter=0;
+  OrderReadyCheckingArray = [];
+ 
 }

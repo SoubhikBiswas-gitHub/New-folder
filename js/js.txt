@@ -138,3 +138,6 @@ const childAdding=()=>{
     cancelBtnHide();
     pointerEventSetDefault();
   }
+
+
+  OrderReadyCheckingA

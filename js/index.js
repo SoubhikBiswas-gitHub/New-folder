@@ -159,13 +159,13 @@ let customerName = "";
 let orderDetailsArray = [];
 //store one pizza order detail before print
 let createOrderDetailsObj = {};
-//it will store all order process/after complete successful order push true --control timer function 
+//it will store all order process/after complete successful order push true --control timer function
 let OrderReadyCheckingArray = [];
-//order executer counter- control timer function 
+//order executer counter- control timer function
 let allPizzaReadyCheckingCounter = 0;
-//click event check for bill generate button- control timer function 
+//click event check for bill generate button- control timer function
 let billGenerateButtonClickCheck = true;
-// pass the biiling all element node to loh and sod 
+// pass the biiling all element node to loh and sod
 let billPrintDynamicArray = [];
 //click event check for bill print button
 let printBtnClickCheck = true;
@@ -200,80 +200,145 @@ const p9PizzaName = p9Img.alt;
 // **** Global Variable *********
 // ***********************************************
 
+
+
 // ***********************************************
 // **** Main Button Clickz Event *********
 // ***********************************************
 
 p1Btn.addEventListener("click", () => {
-  checkBoxUnchacked();
-  cancelBtnHide();
-  pointerEventSetDefault();
   p1BtnCheck.checked = true;
-  cancelBtnVisible(p1CancelBtn, p1Btn, p1ImgSrc, p1PizzaName);
+  if (printBtnClickCheck) {
+    if (billGenerateButtonClickCheck) {
+      cancelBtnVisible(p1CancelBtn, p1Btn, p1ImgSrc, p1PizzaName);
+    } else {
+      billGenerateAlert();
+      checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+    }
+  } else {
+    billPrintAlert();
+    checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+  }
 });
 
 p2Btn.addEventListener("click", () => {
-  checkBoxUnchacked();
-  cancelBtnHide();
-  pointerEventSetDefault();
-  p2BtnCheck.checked = true;
-  cancelBtnVisible(p2CancelBtn, p2Btn, p2ImgSrc, p2PizzaName);
+  if (printBtnClickCheck) {
+    if (billGenerateButtonClickCheck) {
+      p2BtnCheck.checked = true;
+      cancelBtnVisible(p2CancelBtn, p2Btn, p2ImgSrc, p2PizzaName);
+    } else {
+      billGenerateAlert();
+      checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+    }
+  } else {
+    billPrintAlert();
+    checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+  }
 });
 
 p3Btn.addEventListener("click", () => {
-  checkBoxUnchacked();
-  cancelBtnHide();
-  pointerEventSetDefault();
-  p3BtnCheck.checked = true;
-  cancelBtnVisible(p3CancelBtn, p3Btn, p3ImgSrc, p3PizzaName);
+  if (printBtnClickCheck) {
+    if (billGenerateButtonClickCheck) {
+      p3BtnCheck.checked = true;
+      cancelBtnVisible(p3CancelBtn, p3Btn, p3ImgSrc, p3PizzaName);
+    } else {
+      billGenerateAlert();
+      checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+    }
+  } else {
+    billPrintAlert();
+    checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+  }
 });
 
 p4Btn.addEventListener("click", () => {
-  checkBoxUnchacked();
-  cancelBtnHide();
-  pointerEventSetDefault();
-  p4BtnCheck.checked = true;
-  cancelBtnVisible(p4CancelBtn, p4Btn, p4ImgSrc, p4PizzaName);
+  if (printBtnClickCheck) {
+    if (billGenerateButtonClickCheck) {
+      p4BtnCheck.checked = true;
+      cancelBtnVisible(p4CancelBtn, p4Btn, p4ImgSrc, p4PizzaName);
+    } else {
+      billGenerateAlert();
+      checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+    }
+  } else {
+    billPrintAlert();
+    checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+  }
 });
 
 p5Btn.addEventListener("click", () => {
-  checkBoxUnchacked();
-  cancelBtnHide();
-  pointerEventSetDefault();
-  p5BtnCheck.checked = true;
-  cancelBtnVisible(p5CancelBtn, p5Btn, p5ImgSrc, p5PizzaName);
+  if (printBtnClickCheck) {
+    if (billGenerateButtonClickCheck) {
+      p5BtnCheck.checked = true;
+      cancelBtnVisible(p5CancelBtn, p5Btn, p5ImgSrc, p5PizzaName);
+    } else {
+      billGenerateAlert();
+      checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+    }
+  } else {
+    billPrintAlert();
+    checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+  }
 });
 
 p6Btn.addEventListener("click", () => {
-  checkBoxUnchacked();
-  cancelBtnHide();
-  pointerEventSetDefault();
-  p6BtnCheck.checked = true;
-  cancelBtnVisible(p6CancelBtn, p6Btn, p6ImgSrc, p6PizzaName);
+  if (printBtnClickCheck) {
+    if (billGenerateButtonClickCheck) {
+      p6BtnCheck.checked = true;
+      cancelBtnVisible(p6CancelBtn, p6Btn, p6ImgSrc, p6PizzaName);
+    } else {
+      billGenerateAlert();
+      checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+    }
+  } else {
+    billPrintAlert();
+    checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+  }
 });
 
 p7Btn.addEventListener("click", () => {
-  checkBoxUnchacked();
-  cancelBtnHide();
-  pointerEventSetDefault();
-  p7BtnCheck.checked = true;
-  cancelBtnVisible(p7CancelBtn, p7Btn, p7ImgSrc, p7PizzaName);
+  if (printBtnClickCheck) {
+    if (billGenerateButtonClickCheck) {
+      p7BtnCheck.checked = true;
+      cancelBtnVisible(p7CancelBtn, p7Btn, p7ImgSrc, p7PizzaName);
+    } else {
+      billGenerateAlert();
+      checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+    }
+  } else {
+    billPrintAlert();
+    checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+  }
 });
 
 p8Btn.addEventListener("click", () => {
-  checkBoxUnchacked();
-  cancelBtnHide();
-  pointerEventSetDefault();
-  p8BtnCheck.checked = true;
-  cancelBtnVisible(p8CancelBtn, p8Btn, p8ImgSrc, p8PizzaName);
+  if (printBtnClickCheck) {
+    if (billGenerateButtonClickCheck) {
+      p8BtnCheck.checked = true;
+      cancelBtnVisible(p8CancelBtn, p8Btn, p8ImgSrc, p8PizzaName);
+    } else {
+      billGenerateAlert();
+      checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+    }
+  } else {
+    billPrintAlert();
+    checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+  }
 });
 
 p9Btn.addEventListener("click", () => {
-  checkBoxUnchacked();
-  cancelBtnHide();
-  pointerEventSetDefault();
-  p9BtnCheck.checked = true;
-  cancelBtnVisible(p9CancelBtn, p9Btn, p9ImgSrc, p9PizzaName);
+  if (printBtnClickCheck) {
+    if (billGenerateButtonClickCheck) {
+      p9BtnCheck.checked = true;
+      cancelBtnVisible(p9CancelBtn, p9Btn, p9ImgSrc, p9PizzaName);
+    } else {
+      billGenerateAlert();
+      checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+    }
+  } else {
+    billPrintAlert();
+    checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
+  }
 });
 
 // ***********************************************
@@ -287,130 +352,57 @@ p9Btn.addEventListener("click", () => {
 p1sBtn.addEventListener("click", () => {
   p1Price.textContent = 110;
   p1Size.textContent = "Small";
-  
-    if (p1BtnCheck.checked) {
-      if (customerNameAvalityCheck) {
-        const p1SizeValue = p1Size.textContent;
-        const p1PriceValue = p1Price.textContent;
-        const oId = orderIdGenerator();
-        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-        createOrderDiv.appendChild(orderPreviewDiv);
-        checkBoxUnchacked();
-        cancelBtnHide();
-        pointerEventSetDefault();
-        tempObj = {
-          PizzaName: p1PizzaName,
-          SizeValue: p1SizeValue,
-          QtyValue: 1,
-          PriceValue: p1PriceValue,
-        };
-        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
-        tempObj = {};
-        allPizzaReadyCheckingCounter++;
-      } else {
-        while (!customerName) {
-          customerName = prompt("Please Enter The Customer Name ");
-        }
-        const p1SizeValue = p1Size.textContent;
-        const p1PriceValue = p1Price.textContent;
-        const p1QtyValue = 1;
-        const oId = orderIdGenerator();
-        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-        createOrderDiv.appendChild(orderPreviewDiv);
-        checkBoxUnchacked();
-        cancelBtnHide();
-        pointerEventSetDefault();
-        tempObj = {
-          PizzaName: p1PizzaName,
-          SizeValue: p1SizeValue,
-          QtyValue: 1,
-          PriceValue: p1PriceValue,
-        };
-        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
-
-        tempObj = {};
-        allPizzaReadyCheckingCounter++;
-      }
+  const pSizeValue_ = p1Size.textContent;
+  const pPriceValue_ = p1Price.textContent;
+  if (p1BtnCheck.checked) {
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p1PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
     } else {
-      pizzaSelectAlert();
-      checkBoxUnchacked();
-      cancelBtnHide();
-      pointerEventSetDefault();
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p1PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
     }
- 
+  } else {
+    pizzaSelectAlert();
+    checkBoxUnchacked();
+    cancelBtnHide();
+    pointerEventSetDefault();
+  }
 });
 
 p1mBtn.addEventListener("click", () => {
   p1Price.textContent = 160;
   p1Size.textContent = "Medium";
-  // if (p1BtnCheck.checked) {
-  //   const p1SizeValue = p1Size.textContent;
-  //   const oId = orderIdGenerator();
-  //   const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-  //   createOrderDiv.appendChild(orderPreviewDiv);
-  //   checkBoxUnchacked();
-  //   cancelBtnHide();
-  //   pointerEventSetDefault();
-  // } else {
-  //   pizzaSelectAlert();
-  //   checkBoxUnchacked();
-  //   cancelBtnHide();
-  //   pointerEventSetDefault();
-  // }
-
-  if (billGenerateButtonClickCheck) {
-    if (p1BtnCheck.checked) {
-      if (customerNameAvalityCheck) {
-        const p1SizeValue = p1Size.textContent;
-        const p1PriceValue = p1Price.textContent;
-        const oId = orderIdGenerator();
-        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-        createOrderDiv.appendChild(orderPreviewDiv);
-        checkBoxUnchacked();
-        cancelBtnHide();
-        pointerEventSetDefault();
-        tempObj = {
-          PizzaName: p1PizzaName,
-          SizeValue: p1SizeValue,
-          QtyValue: 1,
-          PriceValue: p1PriceValue,
-        };
-        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
-
-        tempObj = {};
-        allPizzaReadyCheckingCounter++;
-      } else {
-        while (!customerName) {
-          customerName = prompt("Please Enter The Customer Name ");
-        }
-        const p1SizeValue = p1Size.textContent;
-        const p1PriceValue = p1Price.textContent;
-        const p1QtyValue = 1;
-        const oId = orderIdGenerator();
-        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-        createOrderDiv.appendChild(orderPreviewDiv);
-        checkBoxUnchacked();
-        cancelBtnHide();
-        pointerEventSetDefault();
-        tempObj = {
-          PizzaName: p1PizzaName,
-          SizeValue: p1SizeValue,
-          QtyValue: 1,
-          PriceValue: p1PriceValue,
-        };
-        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
-
-        tempObj = {};
-        allPizzaReadyCheckingCounter++;
-      }
+  const pSizeValue_ = p1Size.textContent;
+  const pPriceValue_ = p1Price.textContent;
+  if (p1BtnCheck.checked) {
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p1PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
     } else {
-      pizzaSelectAlert();
-      checkBoxUnchacked();
-      cancelBtnHide();
-      pointerEventSetDefault();
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p1PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
     }
   } else {
-    billGenerateAlert();
+    pizzaSelectAlert();
     checkBoxUnchacked();
     cancelBtnHide();
     pointerEventSetDefault();
@@ -420,76 +412,27 @@ p1mBtn.addEventListener("click", () => {
 p1lBtn.addEventListener("click", () => {
   p1Price.textContent = 200;
   p1Size.textContent = "Large";
-  // if (p1BtnCheck.checked) {
-  //   const p1SizeValue = p1Size.textContent;
-  //   const oId = orderIdGenerator();
-  //   const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-  //   createOrderDiv.appendChild(orderPreviewDiv);
-  //   checkBoxUnchacked();
-  //   cancelBtnHide();
-  //   pointerEventSetDefault();
-  //   checkBoxUnchacked();
-  //   cancelBtnHide();
-  //   pointerEventSetDefault();
-  // } else {
-  //   pizzaSelectAlert();
-  //   checkBoxUnchacked();
-  //   cancelBtnHide();
-  //   pointerEventSetDefault();
-  // }
-
-  if (billGenerateButtonClickCheck) {
-    if (p1BtnCheck.checked) {
-      if (customerNameAvalityCheck) {
-        const p1SizeValue = p1Size.textContent;
-        const p1PriceValue = p1Price.textContent;
-        const oId = orderIdGenerator();
-        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-        createOrderDiv.appendChild(orderPreviewDiv);
-        checkBoxUnchacked();
-        cancelBtnHide();
-        pointerEventSetDefault();
-        tempObj = {
-          PizzaName: p1PizzaName,
-          SizeValue: p1SizeValue,
-          QtyValue: 1,
-          PriceValue: p1PriceValue,
-        };
-        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
-
-        tempObj = {};
-        allPizzaReadyCheckingCounter++;
-      } else {
-        while (!customerName) {
-          customerName = prompt("Please Enter The Customer Name ");
-        }
-        const p1SizeValue = p1Size.textContent;
-        const p1PriceValue = p1Price.textContent;
-        const p1QtyValue = 1;
-        const oId = orderIdGenerator();
-        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-        createOrderDiv.appendChild(orderPreviewDiv);
-        checkBoxUnchacked();
-        cancelBtnHide();
-        pointerEventSetDefault();
-        tempObj = {
-          PizzaName: p1PizzaName,
-          SizeValue: p1SizeValue,
-          QtyValue: 1,
-          PriceValue: p1PriceValue,
-        };
-        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
-        tempObj = {};
-        allPizzaReadyCheckingCounter++;
-      }
+  const pSizeValue_ = p1Size.textContent;
+  const pPriceValue_ = p1Price.textContent;
+  if (p1BtnCheck.checked) {
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p1PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
     } else {
-      pizzaSelectAlert();
-      checkBoxUnchacked();
-      cancelBtnHide();
-      pointerEventSetDefault();
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p1PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
     }
   } else {
-    billGenerateAlert();
+    pizzaSelectAlert();
     checkBoxUnchacked();
     cancelBtnHide();
     pointerEventSetDefault();
@@ -499,14 +442,25 @@ p1lBtn.addEventListener("click", () => {
 p2sBtn.addEventListener("click", () => {
   p2Price.textContent = 160;
   p2Size.textContent = "Small";
+  const pSizeValue_ = p2Size.textContent;
+  const pPriceValue_ = p2Price.textContent;
   if (p2BtnCheck.checked) {
-    const p2SizeValue = p2Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p2PizzaName, p2SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p2PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p2PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -518,14 +472,25 @@ p2sBtn.addEventListener("click", () => {
 p2mBtn.addEventListener("click", () => {
   p2Price.textContent = "210";
   p2Size.textContent = "Medium";
+  const pSizeValue_ = p2Size.textContent;
+  const pPriceValue_ = p2Price.textContent;
   if (p2BtnCheck.checked) {
-    const p2SizeValue = p2Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p2PizzaName, p2SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p2PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p2PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -535,16 +500,27 @@ p2mBtn.addEventListener("click", () => {
 });
 
 p2lBtn.addEventListener("click", () => {
-  p2Price.textContent = "250";
+  p2Price.textContent = 250;
   p2Size.textContent = "Large";
+  const pSizeValue_ = p2Size.textContent;
+  const pPriceValue_ = p2Price.textContent;
   if (p2BtnCheck.checked) {
-    const p2SizeValue = p2Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p2PizzaName, p2SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p2PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p2PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -554,16 +530,27 @@ p2lBtn.addEventListener("click", () => {
 });
 
 p3sBtn.addEventListener("click", () => {
-  p3Price.textContent = "130";
+  p3Price.textContent = 130;
   p3Size.textContent = "Small";
+  const pSizeValue_ = p3Size.textContent;
+  const pPriceValue_ = p3Price.textContent;
   if (p3BtnCheck.checked) {
-    const p3SizeValue = p3Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p3PizzaName, p3SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p3PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p3PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -573,16 +560,27 @@ p3sBtn.addEventListener("click", () => {
 });
 
 p3mBtn.addEventListener("click", () => {
-  p3Price.textContent = "180";
+  p3Price.textContent = 180;
   p3Size.textContent = "Medium";
+  const pSizeValue_ = p3Size.textContent;
+  const pPriceValue_ = p3Price.textContent;
   if (p3BtnCheck.checked) {
-    const p3SizeValue = p3Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p3PizzaName, p3SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p3PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p3PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -592,16 +590,27 @@ p3mBtn.addEventListener("click", () => {
 });
 
 p3lBtn.addEventListener("click", () => {
-  p3Price.textContent = "220";
+  p3Price.textContent = 220;
   p3Size.textContent = "Large";
+  const pSizeValue_ = p3Size.textContent;
+  const pPriceValue_ = p3Price.textContent;
   if (p3BtnCheck.checked) {
-    const p3SizeValue = p3Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p3PizzaName, p3SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p3PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p3PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -611,16 +620,27 @@ p3lBtn.addEventListener("click", () => {
 });
 
 p4sBtn.addEventListener("click", () => {
-  p4Price.textContent = "120";
+  p4Price.textContent = 120;
   p4Size.textContent = "Small";
+  const pSizeValue_ = p4Size.textContent;
+  const pPriceValue_ = p4Price.textContent;
   if (p4BtnCheck.checked) {
-    const p4SizeValue = p4Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p4PizzaName, p4SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p4PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p4PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -630,16 +650,27 @@ p4sBtn.addEventListener("click", () => {
 });
 
 p4mBtn.addEventListener("click", () => {
-  p4Price.textContent = "170";
+  p4Price.textContent = 170;
   p4Size.textContent = "Medium";
+  const pSizeValue_ = p4Size.textContent;
+  const pPriceValue_ = p4Price.textContent;
   if (p4BtnCheck.checked) {
-    const p4SizeValue = p4Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p4PizzaName, p4SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p4PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p4PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -649,16 +680,27 @@ p4mBtn.addEventListener("click", () => {
 });
 
 p4lBtn.addEventListener("click", () => {
-  p4Price.textContent = "210";
+  p4Price.textContent = 210;
   p4Size.textContent = "Large";
+  const pSizeValue_ = p4Size.textContent;
+  const pPriceValue_ = p4Price.textContent;
   if (p4BtnCheck.checked) {
-    const p4SizeValue = p4Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p4PizzaName, p4SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p4PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p4PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -668,16 +710,27 @@ p4lBtn.addEventListener("click", () => {
 });
 
 p5sBtn.addEventListener("click", () => {
-  p5Price.textContent = "180";
+  p5Price.textContent = 180;
   p5Size.textContent = "Small";
+  const pSizeValue_ = p5Size.textContent;
+  const pPriceValue_ = p5Price.textContent;
   if (p5BtnCheck.checked) {
-    const p5SizeValue = p5Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p5PizzaName, p5SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p5PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p5PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -687,16 +740,27 @@ p5sBtn.addEventListener("click", () => {
 });
 
 p5mBtn.addEventListener("click", () => {
-  p5Price.textContent = "230";
+  p5Price.textContent = 230;
   p5Size.textContent = "Medium";
+  const pSizeValue_ = p5Size.textContent;
+  const pPriceValue_ = p5Price.textContent;
   if (p5BtnCheck.checked) {
-    const p5SizeValue = p5Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p5PizzaName, p5SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p5PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p5PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -706,16 +770,27 @@ p5mBtn.addEventListener("click", () => {
 });
 
 p5lBtn.addEventListener("click", () => {
-  p5Price.textContent = "270";
+  p5Price.textContent = 270;
   p5Size.textContent = "Large";
+  const pSizeValue_ = p5Size.textContent;
+  const pPriceValue_ = p5Price.textContent;
   if (p5BtnCheck.checked) {
-    const p5SizeValue = p5Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p5PizzaName, p5SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p5PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p5PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -725,16 +800,27 @@ p5lBtn.addEventListener("click", () => {
 });
 
 p6sBtn.addEventListener("click", () => {
-  p6Price.textContent = "170";
+  p6Price.textContent = 170;
   p6Size.textContent = "Small";
+  const pSizeValue_ = p6Size.textContent;
+  const pPriceValue_ = p6Price.textContent;
   if (p6BtnCheck.checked) {
-    const p6SizeValue = p6Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p6PizzaName, p6SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p6PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p6PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -744,16 +830,27 @@ p6sBtn.addEventListener("click", () => {
 });
 
 p6mBtn.addEventListener("click", () => {
-  p6Price.textContent = "220";
+  p6Price.textContent = 220;
   p6Size.textContent = "Medium";
+  const pSizeValue_ = p6Size.textContent;
+  const pPriceValue_ = p6Price.textContent;
   if (p6BtnCheck.checked) {
-    const p6SizeValue = p6Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p6PizzaName, p6SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p6PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p6PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -763,16 +860,27 @@ p6mBtn.addEventListener("click", () => {
 });
 
 p6lBtn.addEventListener("click", () => {
-  p6Price.textContent = "260";
+  p6Price.textContent = 260;
   p6Size.textContent = "Large";
+  const pSizeValue_ = p6Size.textContent;
+  const pPriceValue_ = p6Price.textContent;
   if (p6BtnCheck.checked) {
-    const p6SizeValue = p6Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p6PizzaName, p6SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p6PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p6PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -782,16 +890,27 @@ p6lBtn.addEventListener("click", () => {
 });
 
 p7sBtn.addEventListener("click", () => {
-  p7Price.textContent = "140";
+  p7Price.textContent = 140;
   p7Size.textContent = "Small";
+  const pSizeValue_ = p7Size.textContent;
+  const pPriceValue_ = p7Price.textContent;
   if (p7BtnCheck.checked) {
-    const p7SizeValue = p7Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p7PizzaName, p7SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p7PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p7PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -801,16 +920,27 @@ p7sBtn.addEventListener("click", () => {
 });
 
 p7mBtn.addEventListener("click", () => {
-  p7Price.textContent = "190";
+  p7Price.textContent = 190;
   p7Size.textContent = "Medium";
+  const pSizeValue_ = p7Size.textContent;
+  const pPriceValue_ = p7Price.textContent;
   if (p7BtnCheck.checked) {
-    const p7SizeValue = p7Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p7PizzaName, p7SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p7PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p7PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -820,16 +950,27 @@ p7mBtn.addEventListener("click", () => {
 });
 
 p7lBtn.addEventListener("click", () => {
-  p7Price.textContent = "230";
+  p7Price.textContent = 230;
   p7Size.textContent = "Large";
+  const pSizeValue_ = p7Size.textContent;
+  const pPriceValue_ = p7Price.textContent;
   if (p7BtnCheck.checked) {
-    const p7SizeValue = p7Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p7PizzaName, p7SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p7PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p7PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -839,16 +980,27 @@ p7lBtn.addEventListener("click", () => {
 });
 
 p8sBtn.addEventListener("click", () => {
-  p8Price.textContent = "145";
+  p8Price.textContent = 145;
   p8Size.textContent = "Small";
+  const pSizeValue_ = p8Size.textContent;
+  const pPriceValue_ = p8Price.textContent;
   if (p8BtnCheck.checked) {
-    const p8SizeValue = p8Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p8PizzaName, p8SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p8PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p8PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -858,16 +1010,27 @@ p8sBtn.addEventListener("click", () => {
 });
 
 p8mBtn.addEventListener("click", () => {
-  p8Price.textContent = "195";
+  p8Price.textContent = 195;
   p8Size.textContent = "Medium";
+  const pSizeValue_ = p8Size.textContent;
+  const pPriceValue_ = p8Price.textContent;
   if (p8BtnCheck.checked) {
-    const p8SizeValue = p8Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p8PizzaName, p8SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p8PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p8PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -877,16 +1040,27 @@ p8mBtn.addEventListener("click", () => {
 });
 
 p8lBtn.addEventListener("click", () => {
-  p8Price.textContent = "235";
+  p8Price.textContent = 235;
   p8Size.textContent = "Large";
+  const pSizeValue_ = p8Size.textContent;
+  const pPriceValue_ = p8Price.textContent;
   if (p8BtnCheck.checked) {
-    const p8SizeValue = p8Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p8PizzaName, p8SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p8PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p8PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -896,16 +1070,27 @@ p8lBtn.addEventListener("click", () => {
 });
 
 p9sBtn.addEventListener("click", () => {
-  p9Price.textContent = "125";
+  p9Price.textContent = 125;
   p9Size.textContent = "Small";
+  const pSizeValue_ = p9Size.textContent;
+  const pPriceValue_ = p9Price.textContent;
   if (p9BtnCheck.checked) {
-    const p9SizeValue = p9Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p9PizzaName, p9SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p9PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p9PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -915,16 +1100,27 @@ p9sBtn.addEventListener("click", () => {
 });
 
 p9mBtn.addEventListener("click", () => {
-  p9Price.textContent = "175";
+  p9Price.textContent = 175;
   p9Size.textContent = "Medium";
+  const pSizeValue_ = p9Size.textContent;
+  const pPriceValue_ = p9Price.textContent;
   if (p9BtnCheck.checked) {
-    const p9SizeValue = p9Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p9PizzaName, p9SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p9PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p9PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -934,16 +1130,27 @@ p9mBtn.addEventListener("click", () => {
 });
 
 p9lBtn.addEventListener("click", () => {
-  p9Price.textContent = "215";
+  p9Price.textContent = 215;
   p9Size.textContent = "Large";
+  const pSizeValue_ = p9Size.textContent;
+  const pPriceValue_ = p9Price.textContent;
   if (p9BtnCheck.checked) {
-    const p9SizeValue = p9Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p9PizzaName, p9SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+    if (customerNameAvalityCheck) {
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p9PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    } else {
+      while (!customerName) {
+        customerName = prompt("Please Enter The Customer Name..");
+      }
+      sizeSmall_Medium_Large_BtnSameUtilityFunction(
+        p9PizzaName,
+        pSizeValue_,
+        pPriceValue_
+      );
+    }
   } else {
     pizzaSelectAlert();
     checkBoxUnchacked();
@@ -962,7 +1169,7 @@ p9lBtn.addEventListener("click", () => {
 billGenerateBtn.addEventListener("click", () => {
   var billDateTime = billDateTimeGenerator();
   //before adding removing child from bill
-  
+
   billGenerator(orderDetailsArray, customerName, billDateTime);
   allChildRemoveFromParentFunction(createOrderDiv);
   printBtnClickCheck = false;
@@ -1018,10 +1225,10 @@ billPrintBtn.addEventListener("click", () => {
   LOHtotal.setAttribute("id", "amtTotal_");
   LOHtotalBill.appendChild(LOHtotal);
 
- //Reemoving value to summary of the day
- allChildRemoveFromParentFunction(TDSPizzaDetails);
- allChildRemoveFromParentFunction(TDSPizzaPrices);
- TDSBillTotal.removeChild(TDSBillTotal.lastChild);
+  //Reemoving value to summary of the day
+  allChildRemoveFromParentFunction(TDSPizzaDetails);
+  allChildRemoveFromParentFunction(TDSPizzaPrices);
+  TDSBillTotal.removeChild(TDSBillTotal.lastChild);
 
   //updating value to summary of the day
   for (let item of todayOrderSummaryArray) {
@@ -1050,19 +1257,16 @@ billPrintBtn.addEventListener("click", () => {
   allChildRemoveFromParentFunction(billPizzaPricesList);
   billTotal.removeChild(billTotal.lastChild);
 
-
   //all global value resetting
-  customerNameAvalityCheck=false;
-  customerName="";
-  allPizzaReadyCheckingCounter=0;
-  orderDetailsArray=[];
-  createOrderDetailsObj={};
-  OrderReadyCheckingArray=[];
-  billPrintDynamicArray=[];
-  billGenerateButtonClickCheck=true;
+  customerNameAvalityCheck = false;
+  customerName = "";
+  allPizzaReadyCheckingCounter = 0;
+  orderDetailsArray = [];
+  createOrderDetailsObj = {};
+  OrderReadyCheckingArray = [];
+  billPrintDynamicArray = [];
+  billGenerateButtonClickCheck = true;
   printBtnClickCheck = true;
-
-
 });
 // ***********************************************
 // **** Bill Print Clickz Event *********
@@ -1105,10 +1309,49 @@ p9CancelBtn.addEventListener("click", () =>
 // ***********************************************
 
 // ***********************************************
+// ****all Size button Same utility Function *********
+// ***********************************************
+
+const sizeSmall_Medium_Large_BtnSameUtilityFunction = (
+  pizzaNameValue,
+  pizzaSizeValue,
+  pizzaPriceValue
+) => {
+  const pizzaSizeValue_ = pizzaSizeValue;
+  const pizzaPriceValue_ = pizzaPriceValue;
+  const pizzaNameValue_ = pizzaNameValue;
+  const oId = orderIdGenerator();
+  const orderPreviewDiv = createElement(oId, pizzaNameValue_, pizzaSizeValue_);
+  createOrderDiv.appendChild(orderPreviewDiv);
+  checkBoxUnchacked();
+  cancelBtnHide();
+  pointerEventSetDefault();
+  tempObj = {
+    PizzaName: pizzaNameValue_,
+    SizeValue: pizzaSizeValue_,
+    QtyValue: 1,
+    PriceValue: pizzaPriceValue_,
+  };
+  pizzaQtyValueUpdater(tempObj, orderDetailsArray);
+  tempObj = {};
+  allPizzaReadyCheckingCounter++;
+};
+
+// ***********************************************
+// ****all Size button Same utility Function *********
+// ***********************************************
+
+// ***********************************************
 // **** Utility Function *********
 // ***********************************************
 
-let cancelBtnVisible = (cancelBtn, ParentBtn, imgSrc, title) => {
+const checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault = () => {
+  checkBoxUnchacked();
+  cancelBtnHide();
+  pointerEventSetDefault();
+};
+
+const cancelBtnVisible = (cancelBtn, ParentBtn, imgSrc, title) => {
   cancelBtn.style.display = "block";
   ParentBtn.style.pointerEvents = "none";
   cs_alert.style.display = "block";
@@ -1120,7 +1363,7 @@ let cancelBtnVisible = (cancelBtn, ParentBtn, imgSrc, title) => {
   }, 4000);
 };
 
-let pizzaSelectAlert = () => {
+const pizzaSelectAlert = () => {
   cs_alert.style.display = "block";
   cs_alert.style.backgroundColor = "#5800FF";
   cs_tTitle.textContent = "Pizza Mart !!";
@@ -1134,7 +1377,7 @@ let pizzaSelectAlert = () => {
   }, 4000);
 };
 
-let billGenerateAlert = () => {
+const billGenerateAlert = () => {
   cs_alert.style.display = "block";
   cs_alert.style.backgroundColor = "#FF4A4A";
   cs_tTitle.textContent = "Pizza Mart !!";
@@ -1148,7 +1391,21 @@ let billGenerateAlert = () => {
   }, 4000);
 };
 
-let cancelBtnHide = () => {
+const billPrintAlert = () => {
+  cs_alert.style.display = "block";
+  cs_alert.style.backgroundColor = "#F32424";
+  cs_tTitle.textContent = "Pizza Mart !!";
+  cs_tParagraph.textContent =
+    "Please Print the Bill First!! and Get Paid From Customer";
+  cs_tImg.src = "./assets/Pizza Mart.png";
+  setTimeout(() => {
+    cs_alert.style.display = "none";
+    cs_tParagraph.textContent = " Please select the size !";
+    cs_alert.style.backgroundColor = "#7DCE13";
+  }, 4000);
+};
+
+const cancelBtnHide = () => {
   p1CancelBtn.style.display = "none";
   p2CancelBtn.style.display = "none";
   p3CancelBtn.style.display = "none";
@@ -1160,7 +1417,7 @@ let cancelBtnHide = () => {
   p9CancelBtn.style.display = "none";
 };
 
-let checkBoxUnchacked = () => {
+const checkBoxUnchacked = () => {
   p1BtnCheck.checked = false;
   p2BtnCheck.checked = false;
   p3BtnCheck.checked = false;
@@ -1172,7 +1429,7 @@ let checkBoxUnchacked = () => {
   p9BtnCheck.checked = false;
 };
 
-let pointerEventSetDefault = () => {
+const pointerEventSetDefault = () => {
   p1Btn.style.pointerEvents = "auto";
   p2Btn.style.pointerEvents = "auto";
   p3Btn.style.pointerEvents = "auto";
@@ -1221,7 +1478,6 @@ const checkBoxUnchackedCancelBtnHideEvent = () => {
   checkBoxUnchacked();
 };
 
-
 const allChildRemoveFromParentFunction = (Parent) => {
   while (Parent.firstChild) {
     Parent.removeChild(Parent.firstChild);
@@ -1258,9 +1514,7 @@ const todaySummaryUpdater = (summaryObj, todayOrderSummaryArray) => {
   let addPrice = parseInt(summaryObj.priceP) * parseInt(checkObj.qtyP);
   checkObj.priceP = addPrice;
 };
-// console.log(orderDetailsArray);
-// console.log("message");
-// console.log(createOrderDetailsObj)
+
 // ***********************************************
 // **** Utility Function *********
 // ***********************************************

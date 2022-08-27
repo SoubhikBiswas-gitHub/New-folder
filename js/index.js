@@ -122,7 +122,7 @@ const p9CancelBtn = document.getElementById("p9cancel");
 
 //Bill Items Select
 const billCustomerName = document.getElementById("billCustomerNamelbl");
-const billDateTimelbl = document.getElementById("billCustomerNamelbl");
+const billDateTimelbl = document.getElementById("billDateTimelbl");
 const billPizzaTypesList = document.getElementById("billPizzaTypesList");
 const billPizzaSizesList = document.getElementById("billPizzaSizesList");
 const billPizzaQtysList = document.getElementById("billPizzaQtysList");
@@ -130,6 +130,19 @@ const billPizzaPricesList = document.getElementById("billPizzaPricesList");
 const billTotal = document.getElementById("billTotal");
 const billPrintBtn = document.getElementById("billPrintBtn");
 //Bill Items Select
+
+//last order history Items Select
+const LOHPizzaDetails = document.getElementById("lohPizzaDetails");
+const LOHPizzaPricesDetails = document.getElementById("lohPizzaPricesDetails");
+const LOHtotalBill = document.getElementById("lohtotalBill");
+//last order history Items Select
+
+//Today Summery items Selector
+const TDSPizzaDetails = document.getElementById("tdsPizzaDetails");
+const TDSPizzaPrices = document.getElementById("tdsPizzaPrices");
+const TDSBillTotal = document.getElementById("tdsBillTotal");
+
+//Today Summery items Selector
 
 // ***********************************************
 // ************** Element Selector *********************
@@ -147,6 +160,11 @@ let createOrderDetailsObj = {};
 let OrderReadyCheckingArray = [];
 let allPizzaReadyCheckingCounter = 0;
 let billGenerateButtonClickCheck = true;
+let billPrintDynamicArray = [];
+let toDayOrderSummeryArray = [];
+let printBtnClickCheck = true;
+let todayOrderSummaryArray = [];
+let summaryDayObj = {};
 
 //Image Source :
 const p1ImgSrc = p1Img.src;
@@ -272,13 +290,16 @@ p1sBtn.addEventListener("click", () => {
         checkBoxUnchacked();
         cancelBtnHide();
         pointerEventSetDefault();
-        let tempObj = saveAllDataIntoArray(
-          p1PizzaName,
-          p1SizeValue,
-          p1PriceValue
-        );
+        tempObj = {
+          PizzaName: p1PizzaName,
+          SizeValue: p1SizeValue,
+          QtyValue: 1,
+          PriceValue: p1PriceValue,
+        };
         // orderDetailsArray.push(tempObj);
+        // orderDetailsArray=pizzaQtyValueUpdater(tempObj, orderDetailsArray);
         pizzaQtyValueUpdater(tempObj, orderDetailsArray);
+        tempObj = {};
         allPizzaReadyCheckingCounter++;
       } else {
         while (!customerName) {
@@ -293,14 +314,16 @@ p1sBtn.addEventListener("click", () => {
         checkBoxUnchacked();
         cancelBtnHide();
         pointerEventSetDefault();
-        let tempObj = saveAllDataIntoArray(
-          p1PizzaName,
-          p1SizeValue,
-          p1QtyValue,
-          p1PriceValue
-        );
+        tempObj = {
+          PizzaName: p1PizzaName,
+          SizeValue: p1SizeValue,
+          QtyValue: 1,
+          PriceValue: p1PriceValue,
+        };
         // orderDetailsArray.push(tempObj);
         pizzaQtyValueUpdater(tempObj, orderDetailsArray);
+
+        tempObj = {};
         allPizzaReadyCheckingCounter++;
       }
     } else {
@@ -318,18 +341,77 @@ p1sBtn.addEventListener("click", () => {
 });
 
 p1mBtn.addEventListener("click", () => {
-  p1Price.textContent = "160";
+  p1Price.textContent = 160;
   p1Size.textContent = "Medium";
-  if (p1BtnCheck.checked) {
-    const p1SizeValue = p1Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+  // if (p1BtnCheck.checked) {
+  //   const p1SizeValue = p1Size.textContent;
+  //   const oId = orderIdGenerator();
+  //   const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
+  //   createOrderDiv.appendChild(orderPreviewDiv);
+  //   checkBoxUnchacked();
+  //   cancelBtnHide();
+  //   pointerEventSetDefault();
+  // } else {
+  //   pizzaSelectAlert();
+  //   checkBoxUnchacked();
+  //   cancelBtnHide();
+  //   pointerEventSetDefault();
+  // }
+  if (billGenerateButtonClickCheck) {
+    if (p1BtnCheck.checked) {
+      if (customerNameAvalityCheck) {
+        const p1SizeValue = p1Size.textContent;
+        const p1PriceValue = p1Price.textContent;
+        const oId = orderIdGenerator();
+        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
+        createOrderDiv.appendChild(orderPreviewDiv);
+        checkBoxUnchacked();
+        cancelBtnHide();
+        pointerEventSetDefault();
+        tempObj = {
+          PizzaName: p1PizzaName,
+          SizeValue: p1SizeValue,
+          QtyValue: 1,
+          PriceValue: p1PriceValue,
+        };
+        // orderDetailsArray.push(tempObj);
+        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
+
+        tempObj = {};
+        allPizzaReadyCheckingCounter++;
+      } else {
+        while (!customerName) {
+          customerName = prompt("Please Enter The Customer Name ");
+        }
+        const p1SizeValue = p1Size.textContent;
+        const p1PriceValue = p1Price.textContent;
+        const p1QtyValue = 1;
+        const oId = orderIdGenerator();
+        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
+        createOrderDiv.appendChild(orderPreviewDiv);
+        checkBoxUnchacked();
+        cancelBtnHide();
+        pointerEventSetDefault();
+        tempObj = {
+          PizzaName: p1PizzaName,
+          SizeValue: p1SizeValue,
+          QtyValue: 1,
+          PriceValue: p1PriceValue,
+        };
+        // orderDetailsArray.push(tempObj);
+        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
+
+        tempObj = {};
+        allPizzaReadyCheckingCounter++;
+      }
+    } else {
+      pizzaSelectAlert();
+      checkBoxUnchacked();
+      cancelBtnHide();
+      pointerEventSetDefault();
+    }
   } else {
-    pizzaSelectAlert();
+    billGenerateAlert();
     checkBoxUnchacked();
     cancelBtnHide();
     pointerEventSetDefault();
@@ -337,21 +419,79 @@ p1mBtn.addEventListener("click", () => {
 });
 
 p1lBtn.addEventListener("click", () => {
-  p1Price.textContent = "200";
+  p1Price.textContent = 200;
   p1Size.textContent = "Large";
-  if (p1BtnCheck.checked) {
-    const p1SizeValue = p1Size.textContent;
-    const oId = orderIdGenerator();
-    const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
-    createOrderDiv.appendChild(orderPreviewDiv);
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
-    checkBoxUnchacked();
-    cancelBtnHide();
-    pointerEventSetDefault();
+  // if (p1BtnCheck.checked) {
+  //   const p1SizeValue = p1Size.textContent;
+  //   const oId = orderIdGenerator();
+  //   const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
+  //   createOrderDiv.appendChild(orderPreviewDiv);
+  //   checkBoxUnchacked();
+  //   cancelBtnHide();
+  //   pointerEventSetDefault();
+  //   checkBoxUnchacked();
+  //   cancelBtnHide();
+  //   pointerEventSetDefault();
+  // } else {
+  //   pizzaSelectAlert();
+  //   checkBoxUnchacked();
+  //   cancelBtnHide();
+  //   pointerEventSetDefault();
+  // }
+  if (billGenerateButtonClickCheck) {
+    if (p1BtnCheck.checked) {
+      if (customerNameAvalityCheck) {
+        const p1SizeValue = p1Size.textContent;
+        const p1PriceValue = p1Price.textContent;
+        const oId = orderIdGenerator();
+        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
+        createOrderDiv.appendChild(orderPreviewDiv);
+        checkBoxUnchacked();
+        cancelBtnHide();
+        pointerEventSetDefault();
+        tempObj = {
+          PizzaName: p1PizzaName,
+          SizeValue: p1SizeValue,
+          QtyValue: 1,
+          PriceValue: p1PriceValue,
+        };
+        // orderDetailsArray.push(tempObj);
+        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
+
+        tempObj = {};
+        allPizzaReadyCheckingCounter++;
+      } else {
+        while (!customerName) {
+          customerName = prompt("Please Enter The Customer Name ");
+        }
+        const p1SizeValue = p1Size.textContent;
+        const p1PriceValue = p1Price.textContent;
+        const p1QtyValue = 1;
+        const oId = orderIdGenerator();
+        const orderPreviewDiv = createElement(oId, p1PizzaName, p1SizeValue);
+        createOrderDiv.appendChild(orderPreviewDiv);
+        checkBoxUnchacked();
+        cancelBtnHide();
+        pointerEventSetDefault();
+        tempObj = {
+          PizzaName: p1PizzaName,
+          SizeValue: p1SizeValue,
+          QtyValue: 1,
+          PriceValue: p1PriceValue,
+        };
+        // orderDetailsArray.push(tempObj);
+        pizzaQtyValueUpdater(tempObj, orderDetailsArray);
+        tempObj = {};
+        allPizzaReadyCheckingCounter++;
+      }
+    } else {
+      pizzaSelectAlert();
+      checkBoxUnchacked();
+      cancelBtnHide();
+      pointerEventSetDefault();
+    }
   } else {
-    pizzaSelectAlert();
+    billGenerateAlert();
     checkBoxUnchacked();
     cancelBtnHide();
     pointerEventSetDefault();
@@ -359,7 +499,7 @@ p1lBtn.addEventListener("click", () => {
 });
 
 p2sBtn.addEventListener("click", () => {
-  p2Price.textContent = "160";
+  p2Price.textContent = 160;
   p2Size.textContent = "Small";
   if (p2BtnCheck.checked) {
     const p2SizeValue = p2Size.textContent;
@@ -822,22 +962,96 @@ p9lBtn.addEventListener("click", () => {
 // **** Bill Generate Clickz Event *********
 // ***********************************************
 billGenerateBtn.addEventListener("click", () => {
+  var billDateTime = billDateTimeGenerator();
+  //before adding removing child from bill
+  billCustomerName.removeChild(billCustomerName.firstChild)
+  billDateTimelbl.removeChild(billDateTimelbl.firstChild)
+  allChildRemoveFromParentFunction(billPizzaTypesList)
+  allChildRemoveFromParentFunction(billPizzaSizesList)
+  allChildRemoveFromParentFunction(billPizzaQtysList)
+  allChildRemoveFromParentFunction(billPizzaPricesList)
+  billTotal.removeChild(billTotal.firstChild)
+
+  billGenerator(orderDetailsArray, customerName, billDateTime);
+  allChildRemoveFromParentFunction(createOrderDiv);
+  printBtnClickCheck = false;
   customerNameAvalityCheck = false;
   billGenerateButtonClickCheck = true;
   customerName = "";
+  billDateTime = "";
   allPizzaReadyCheckingCounter = 0;
   OrderReadyCheckingArray = [];
   checkBoxUnchacked();
   cancelBtnHide();
   pointerEventSetDefault();
-  allChildFromParentFunction(createOrderDiv);
-  var billDateTime = billDateTimeGenerator();
-  // console.log(orderDetailsArray)
-  billGenerator(orderDetailsArray, customerName, billDateTime);
 });
 
 // ***********************************************
 // **** Bill Generate Clickz Event *********
+// ***********************************************
+
+// ***********************************************
+// **** Bill Print Clickz Event *********
+// ***********************************************
+billPrintBtn.addEventListener("click", () => {
+  printBtnClickCheck = true;
+  let tempArray = [];
+  let totalSum = 0;
+  let todayTotalSum = 0;
+  //Reemoving value to summary of the day
+  allChildRemoveFromParentFunction(LOHPizzaDetails);
+  allChildRemoveFromParentFunction(LOHPizzaPricesDetails);
+  LOHtotalBill.removeChild(LOHtotalBill.firstChild);
+  //adding value to summary of the day
+  //colone node of customer bill full and append by todays full summary node
+  for (let i = 0; i < billPrintDynamicArray.length; i = i + 4) {
+    for (let j = i; j < i + 3 && j < billPrintDynamicArray.length; j++) {
+      let val = billPrintDynamicArray[j].textContent;
+      tempArray.push(val);
+    }
+    let [type, size, qty] = tempArray;
+    const detailsPizza = document.createElement("li");
+    detailsPizza.textContent = `${type}(${size})(${qty})`;
+    LOHPizzaDetails.appendChild(detailsPizza);
+    tempArray = [];
+  }
+  for (let k = 3; k < billPrintDynamicArray.length; k = k + 4) {
+    const pricePizza = document.createElement("li");
+    pricePizza.textContent = billPrintDynamicArray[k].textContent;
+    totalSum += parseInt(pricePizza.textContent);
+    LOHPizzaPricesDetails.appendChild(pricePizza);
+  }
+  const LOHtotal = document.createElement("div");
+  LOHtotal.textContent = `${totalSum}/-`;
+  LOHtotal.setAttribute("class", "amtTotal_");
+  LOHtotal.setAttribute("id", "amtTotal_");
+  LOHtotalBill.appendChild(LOHtotal);
+
+ //Reemoving value to summary of the day
+ allChildRemoveFromParentFunction(TDSPizzaDetails);
+ allChildRemoveFromParentFunction(TDSPizzaPrices);
+ TDSBillTotal.removeChild(TDSBillTotal.firstChild);
+
+  //updating value to summary of the day
+  for (let item of todayOrderSummaryArray) {
+    let { sizeP, qtyP, priceP } = item;
+    todayTotalSum += parseInt(priceP);
+    const SizeP_QtyP = document.createElement("li");
+    SizeP_QtyP.textContent = `${sizeP}(${qtyP})`;
+    TDSPizzaDetails.appendChild(SizeP_QtyP);
+    const PriceP_ = document.createElement("li");
+    PriceP_.textContent = priceP;
+    TDSPizzaPrices.appendChild(PriceP_);
+  }
+  const TotalP_ = document.createElement("div");
+  TotalP_.setAttribute("class", "amtTotal_");
+  TotalP_.textContent = todayTotalSum;
+  TDSBillTotal.appendChild(TotalP_);
+  billPrintDynamicArray = [];
+  summaryDayObj = {};
+});
+// ***********************************************
+// **** Bill Print Clickz Event *********
 // ***********************************************
 
 // ***********************************************
@@ -993,17 +1207,8 @@ const checkBoxUnchackedCancelBtnHideEvent = () => {
   checkBoxUnchacked();
 };
 
-const saveAllDataIntoArray = (PizzaName, SizeValue, QtyValue, PriceValue) => {
-  let createOrderDetailsObj = {
-    PizzaName,
-    SizeValue,
-    QtyValue,
-    PriceValue,
-  };
-  return createOrderDetailsObj;
-};
 
-const allChildFromParentFunction = (Parent) => {
+const allChildRemoveFromParentFunction = (Parent) => {
   while (Parent.firstChild) {
     Parent.removeChild(Parent.firstChild);
   }
@@ -1012,27 +1217,36 @@ const allChildFromParentFunction = (Parent) => {
 };
 
 const pizzaQtyValueUpdater = (tempOrderObj, orderDetailsArray) => {
-  let { PizzaName, SizeValue, QtyValue, PriceValue } = tempOrderObj;
-  if (orderDetailsArray.length === 0) {
+  let foundObj = orderDetailsArray.find(
+    (val) =>
+      val.PizzaName == tempOrderObj.PizzaName &&
+      val.SizeValue == tempOrderObj.SizeValue
+  );
+  if (!foundObj) {
     orderDetailsArray.push(tempOrderObj);
-  } else {
-    for (newObj of orderDetailsArray) {
-      if (newObj["PizzaName"] === PizzaName) {
-        if (newObj["SizeValue"] === SizeValue) {
-          newObj["QtyValue"]++,
-          newObj["PriceValue"]=parseInt(PriceValue) *parseInt(newObj["QtyValue"]) ;
-        } else {
-          orderDetailsArray.push(tempOrderObj);
-        }
-      } else {
-        orderDetailsArray.push(tempOrderObj);
-      }
-    }
+    return;
   }
-  console.log(orderDetailsArray);
+  foundObj.QtyValue += tempOrderObj.QtyValue;
+  let addPrice =
+    parseInt(tempOrderObj.PriceValue) * parseInt(foundObj.QtyValue);
+  foundObj.PriceValue = addPrice;
 };
+
+const todaySummaryUpdater = (summaryObj, todayOrderSummaryArray) => {
+  let checkObj = todayOrderSummaryArray.find(
+    (val) => val.sizeP == summaryObj.sizeP
+  );
+  if (!checkObj) {
+    todayOrderSummaryArray.push(summaryObj);
+    return;
+  }
+  checkObj.qtyP += summaryObj.qtyP;
+  let addPrice = parseInt(summaryObj.priceP) * parseInt(checkObj.qtyP);
+  checkObj.priceP = addPrice;
+};
+// console.log(orderDetailsArray);
+// console.log("message");
 // console.log(createOrderDetailsObj)
-// console.log(orderDetailsArray)
 // ***********************************************
 // **** Utility Function *********
 // ***********************************************

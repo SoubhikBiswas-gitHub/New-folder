@@ -94,7 +94,7 @@ const createElement = (orderId, Ptype, Psize) => {
       statusSpan.style.display = "none";
       statusDiv.appendChild(readyStatus);
       readyStatus.src = "./assets/readyOrder.gif";
-      readyStatus.style.width = "70%";
+      readyStatus.style.width = "100%";
       if (allPizzaReadyCheckingCounter === OrderReadyCheckingArray.length) {
         billGenerateBtn.style.display = "block";
         billGenerateButtonClickCheck = false;

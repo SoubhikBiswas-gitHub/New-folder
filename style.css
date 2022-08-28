@@ -50,12 +50,13 @@ html {
 }
 
 /* bootstrap css */
-.cs_alert {
-    position: static;
+#cs_alert {
+    position:fixed !important; 
     background-color: #07d988;
-    top: 0;
-    right: 0;
+    top: 14rem;
+    right: 70%;
     z-index: 1;
+    opacity: .93;
     border-radius: 10px;
     width: 30%;
 }
@@ -89,8 +90,8 @@ html {
 }
 
 ._header {
-    position: absolute;
-    /* z-index: 100; */
+    position: fixed;
+    z-index: 100;
     border-bottom: 2px solid rgba(255, 0, 39, 0.89);
     /* border: 3px solid green; */
     width: 100%;
@@ -147,8 +148,10 @@ html {
 
 .containerk .main {
     /* margin-top: 110px; */
-    margin-top: 11rem;
+    /* margin-top: 11rem; */
+    width: 100%;
     /* border: 5px solid rgb(107, 0, 128); */
+    position: absolute;
 }
 
 .containerk .main-outer {
@@ -401,7 +404,8 @@ html {
 }
 
 .order-status .details .type,
-.order-status .details .size {
+.order-status .details .size,
+.order-status .details .price {
     font-size: 2rem;
     font-weight: 900;
     padding: 1px 0;

@@ -1,13 +1,13 @@
 //loading effect
 // const Loader=document.getElementById("loader")
-
-document.onreadystatechange = function() {
+// import{resetInterval} from './createOrder'
+document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
-      document.querySelector("body").style.visibility = "hidden";
-      document.querySelector("#loader").style.visibility = "visible";
+    document.querySelector("body").style.visibility = "hidden";
+    document.querySelector("#loader").style.visibility = "visible";
   } else {
-      document.querySelector("#loader").style.display = "none";
-      document.querySelector("body").style.visibility = "visible";
+    document.querySelector("#loader").style.display = "none";
+    document.querySelector("body").style.visibility = "visible";
   }
 };
 
@@ -16,9 +16,8 @@ document.onreadystatechange = function() {
 // ***********************************************
 
 //Bill Node selector for copy to today summary
-const nodeCopyFrom=document.getElementById("nodeCopy");
-const todaySummaryModalBoby=document.getElementById("todaySummaryBody");
-
+const nodeCopyFrom = document.getElementById("nodeCopy");
+const todaySummaryModalBoby = document.getElementById("todaySummaryBody");
 
 //oder div Selector
 const createOrderDiv = document.getElementById("createOrder");
@@ -193,6 +192,8 @@ let todayOrderSummaryArray = [];
 //whole day summary object
 let summaryDayObj = {};
 
+let orderCancelcheck = false;
+
 //Image Source :
 const p1ImgSrc = p1Img.src;
 const p2ImgSrc = p2Img.src;
@@ -218,8 +219,6 @@ const p9PizzaName = p9Img.alt;
 // ***********************************************
 // **** Global Variable *********
 // ***********************************************
-
-
 
 // ***********************************************
 // **** Main Button Clickz Event *********
@@ -1195,12 +1194,13 @@ p9lBtn.addEventListener("click", () => {
 // **** Bill Generate Clickz Event *********
 // ***********************************************
 billGenerateBtn.addEventListener("click", () => {
-
-
   var billDateTime = billDateTimeGenerator();
   //before adding removing child from bill
-
-  billGenerator(orderDetailsArray, customerName, billDateTime);
+  console.log(orderDetailsArray);
+  const updatedArray = orderDetailsArray.filter(
+    (obj) => obj.PriceValue !== 0 && obj.QtyValue !== 0
+  );
+  billGenerator(updatedArray, customerName, billDateTime);
   allChildRemoveFromParentFunction(createOrderDiv);
   printBtnClickCheck = false;
   customerNameAvalityCheck = false;
@@ -1223,10 +1223,10 @@ billGenerateBtn.addEventListener("click", () => {
 // ***********************************************
 billPrintBtn.addEventListener("click", () => {
   //colone node of customer bill full and append by todays full summary node..
-  const dynamicCreateDiv=document.createElement('div');
-  dynamicCreateDiv.setAttribute("id","dynamicCreateDiv");
-  dynamicCreateDiv.setAttribute("class","dynamicCreateDiv");
-  const nodeCopyTo=nodeCopyFrom.cloneNode(true);
+  const dynamicCreateDiv = document.createElement("div");
+  dynamicCreateDiv.setAttribute("id", "dynamicCreateDiv");
+  dynamicCreateDiv.setAttribute("class", "dynamicCreateDiv");
+  const nodeCopyTo = nodeCopyFrom.cloneNode(true);
   dynamicCreateDiv.appendChild(nodeCopyTo);
   todaySummaryModalBoby.appendChild(dynamicCreateDiv);
 
@@ -1304,7 +1304,7 @@ billPrintBtn.addEventListener("click", () => {
   billPrintDynamicArray = [];
   billGenerateButtonClickCheck = true;
   printBtnClickCheck = true;
-  console.log(todayOrderSummaryArray)
+  console.log(todayOrderSummaryArray);
 });
 // ***********************************************
 // **** Bill Print Clickz Event *********
@@ -1359,11 +1359,17 @@ const sizeSmall_Medium_Large_BtnSameUtilityFunction = (
   const pizzaPriceValue_ = pizzaPriceValue;
   const pizzaNameValue_ = pizzaNameValue;
   const oId = orderIdGenerator();
-  const orderPreviewDiv = createElement(oId, pizzaNameValue_, pizzaSizeValue_);
+  const orderPreviewDiv = createElement(
+    oId,
+    pizzaNameValue_,
+    pizzaSizeValue_,
+    pizzaPriceValue_
+  );
   createOrderDiv.appendChild(orderPreviewDiv);
   checkBoxUnchacked();
   cancelBtnHide();
   pointerEventSetDefault();
+
   tempObj = {
     PizzaName: pizzaNameValue_,
     SizeValue: pizzaSizeValue_,
@@ -1524,6 +1530,26 @@ const allChildRemoveFromParentFunction = (Parent) => {
   //parent.innerHTML = '';
 };
 
+const afterCancelValueUpdater = (removeObj, orderDetailsArray) => {
+  console.log(orderDetailsArray)
+  let foundObj = orderDetailsArray.find(
+    (val) =>
+      val.PizzaName == removeObj.PizzaName &&
+      val.SizeValue == removeObj.SizeValue
+  );
+
+  foundObj.QtyValue -= removeObj.QtyValue;
+  let substractPrice =
+    parseInt(foundObj.PriceValue) - parseInt(removeObj.priceP);
+  foundObj.PriceValue = substractPrice;
+  console.log(orderDetailsArray)
+
+
+
+};
+
+
+
 const pizzaQtyValueUpdater = (tempOrderObj, orderDetailsArray) => {
   let foundObj = orderDetailsArray.find(
     (val) =>
@@ -1552,7 +1578,36 @@ const todaySummaryUpdater = (summaryObj, todayOrderSummaryArray) => {
   let addPrice = parseInt(summaryObj.priceP) + parseInt(checkObj.priceP);
   checkObj.priceP = addPrice;
 };
-console.log(todayOrderSummaryArray)
+// console.log(todayOrderSummaryArray)
+document.querySelector("#createOrder").addEventListener("click", function (e) {
+  if (e.target && e.target.id == "cncl") {
+    const hideNode = e.target.parentNode.parentNode.parentNode //going parent master node
+    const a = e.target.parentNode.parentNode //going parent node
+    //coming down from parent again**********
+    const b = a.firstElementChild;
+    const c = b.nextElementSibling;
+    const d = c.firstElementChild;
+    const d_1 = d.firstElementChild; // --->want ---> Type
+    const d_2 = d_1.nextElementSibling; //don't want -->hr
+    const d_3 = d_2.nextElementSibling; // --->want  ----> Size
+    const d_4 = d_3.nextElementSibling; //don't want -->hr
+    const d_5 = d_4.nextElementSibling; // --->want  ----> Price
+    const removeName = d_1.textContent.split(":")[1].trim();
+    const removeSize = d_3.textContent.split(":")[1].trim();
+    const removePrice = d_5.textContent.split(":")[1].trim();
+    tempRemoveObj = {
+      PizzaName: removeName,
+      SizeValue: removeSize,
+      QtyValue: 1,
+      PriceValue: removePrice,
+    };
+    afterCancelValueUpdater(tempRemoveObj, orderDetailsArray);
+    document.querySelector("#createOrder").removeChild(hideNode);
+    orderCancelcheck = true;
+    // allPizzaReadyCheckingCounter--;
+  }
+});
+
 // ***********************************************
 // **** Utility Function *********
 // ***********************************************

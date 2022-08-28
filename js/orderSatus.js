@@ -66,6 +66,7 @@ const packageReceivedAtCounter = (dynamicOrderStatus) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			dynamicOrderStatus.textContent = 'Package received at counter'
+			OrderReadyCheckingArray.push("Completed");
 			resolve()
 		}, 2000)
 	})

@@ -1,8 +1,9 @@
+
 // ***********************************************
 // **** order-preview Component Create function *********
 // ***********************************************
 
-const createElement = (orderId, Ptype, Psize) => {
+const createElement = (orderId, Ptype, Psize,Pprice) => {
   const orderPreviewDiv = document.createElement("div");
   orderPreviewDiv.setAttribute("class", "order-preview");
   orderPreviewDiv.setAttribute("id", "newOrderBox");
@@ -36,16 +37,22 @@ const createElement = (orderId, Ptype, Psize) => {
   timeDateDiv.appendChild(cancelBtn);
   const typeSpan = document.createElement("span");
   const sizeSpan = document.createElement("span");
+  const priceSpan=document.createElement("span");   
   const hr1 = document.createElement("hr");
   const hr2 = document.createElement("hr");
+  const hr3 = document.createElement("hr");
   typeSpan.setAttribute("id", "pType");
   typeSpan.setAttribute("class", "type");
   sizeSpan.setAttribute("id", "pSize");
   sizeSpan.setAttribute("class", "size");
+  priceSpan.setAttribute("id", "pPrice");
+  priceSpan.setAttribute("class", "price");
   detailsDiv.appendChild(typeSpan);
   detailsDiv.appendChild(hr1);
   detailsDiv.appendChild(sizeSpan);
   detailsDiv.appendChild(hr2);
+  detailsDiv.appendChild(priceSpan);
+  detailsDiv.appendChild(hr3);
   const statusSpan = document.createElement("span");
   const dynamicSpan = document.createElement("span");
   const readyStatus = document.createElement("img");
@@ -70,9 +77,15 @@ const createElement = (orderId, Ptype, Psize) => {
   orderIdDiv.textContent = `BLRPM-${orderId}`;
   typeSpan.textContent = `Type : ${Ptype}`;
   sizeSpan.textContent = `Size : ${Psize}`;
+  priceSpan.textContent = `Price : ${Pprice}/-`;
   statusSpan.textContent = "Status:";
   dynamicSpan.textContent = "Order Placed";
   timeSpan.textContent = "00:00";
+
+  //clncle event
+ 
+  
+
 
   //*****************************/
   //*****Waiting Time Function***********/
@@ -80,7 +93,7 @@ const createElement = (orderId, Ptype, Psize) => {
 
   let startMin = 1;
   let startSec = startMin * 60;
-  const resetInterval = setInterval(updateCounter, 1000);
+   const resetInterval = setInterval(updateCounter, 1000);
   function updateCounter() {
     let min = Math.floor(startSec / 60);
     let Sec = startSec % 60;
@@ -100,10 +113,15 @@ const createElement = (orderId, Ptype, Psize) => {
         billGenerateButtonClickCheck = false;
       }
     }
+    if (Sec == 15 && min == 00) {
+cancelBtn.disabled = true;
+    }
+
     startSec--;
   }
 
 
+  
   //*****************************/
   //*****Promise Function***********/
   //*****************************/
@@ -118,12 +136,18 @@ const createElement = (orderId, Ptype, Psize) => {
     .then(packageReceivedAtCounter)
     .then(() => {
       dynamicOrderStatus.textContent = "Package received at counter";
-      OrderReadyCheckingArray.push(true);
+      
     })
     .catch((err) => (dynamicOrderStatus.textContent = `${err}`));
 
   //*****************************/
   //*****Returning Parent Div***********/
   //*****************************/
+  // console.log(OrderReadyCheckingArray)
+  // console.log(allPizzaReadyCheckingCounter)
   return orderPreviewDiv;
 };
+
+
+
+

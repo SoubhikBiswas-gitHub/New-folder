@@ -9,12 +9,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="./js/index.js" defer ></script>
-    <script src="./js/createOrder.js" defer ></script>
-    <script src="./js/orderSatus.js"  defer></script> -->
+
 </head>
 
 <body>
+    <div id="loader">
+        <img src="./assets/loading.gif" alt="loading" srcset="">
+    </div>
     <div class="containerk">
         <div class="_header">
             <div class="header-left">
@@ -333,11 +334,11 @@
 
                             </div>
                         </div> -->
-                       
+
                     </div>
                     <hr>
                     <div class="generateBill"><button id="generateBillBtn" class="generateBillBtn">Generate
-                        Bill</button></div>
+                            Bill</button></div>
                 </div>
                 <!-- ****************************
                 *****Bill Generator*************
@@ -348,54 +349,56 @@
                     <div class="billDiv">
                         <div class="billcreate">
                             <label class="samelblm">Customer Bill </label>
-                            <div class="billheader">
-                                <span class="customerNamelbl" id="billCustomerNamelbl">CustomerName:
-                                    <!-- <span class="customerName" id="billCustomerName">Soubhik</span> -->
-                                </span>
-                                <span class="billCreatelbl" id="billDateTimelbl">Date-Time
-                                    <!-- <span class="dateTime" id="billDateTime"> 17/02/2022 15:25:20</span> -->
-                                </span>
-                            </div>
+                            <div class="nodeCopy" id="nodeCopy">
+                                <div class="billheader">
+                                    <span class="customerNamelbl" id="billCustomerNamelbl">CustomerName:
+                                        <!-- <span class="customerName" id="billCustomerName">Soubhik</span> -->
+                                    </span>
+                                    <span class="billCreatelbl" id="billDateTimelbl">Date-Time
+                                        <!-- <span class="dateTime" id="billDateTime"> 17/02/2022 15:25:20</span> -->
+                                    </span>
+                                </div>
 
-                            <div class="content_1" id="billContent_1">
-                                <div class="pizzaTypes">
-                                    <label>Pizza Types</label>
-                                    <ul id="billPizzaTypesList">
-                                        <!-- <li>Corn & Cheese </li>
+                                <div class="content_1" id="billContent_1">
+                                    <div class="pizzaTypes">
+                                        <label>Pizza Types</label>
+                                        <ul id="billPizzaTypesList">
+                                            <!-- <li>Corn & Cheese </li>
                                         <li>Corn & Cheese </li>
                                         <li>Corn & Cheese</li> -->
-                                    </ul>
-                                </div>
-                                <div class="PizzaSizes">
-                                    <label>Pizza Sizes</label>
-                                    <ul id="billPizzaSizesList">
-                                        <!-- <li>Small</li>
+                                        </ul>
+                                    </div>
+                                    <div class="PizzaSizes">
+                                        <label>Pizza Sizes</label>
+                                        <ul id="billPizzaSizesList">
+                                            <!-- <li>Small</li>
                                         <li>Medium</li>
                                         <li>Large</li> -->
-                                    </ul>
-                                </div>
-                                <div class="PizzaQty">
-                                    <label>Pizza Qty's</label>
-                                    <ul id="billPizzaQtysList" >
-                                        <!-- <li>#2</li>
+                                        </ul>
+                                    </div>
+                                    <div class="PizzaQty">
+                                        <label>Pizza Qty's</label>
+                                        <ul id="billPizzaQtysList">
+                                            <!-- <li>#2</li>
                                         <li>#1</li>
                                         <li>#4</li> -->
-                                    </ul>
-                                </div>
+                                        </ul>
+                                    </div>
 
-                                <div class="pricesSummery">
-                                    <label>Amount</label>
-                                    <ul id="billPizzaPricesList">
-                                        <!-- <li>100/-</li>
+                                    <div class="pricesSummery">
+                                        <label>Amount</label>
+                                        <ul id="billPizzaPricesList">
+                                            <!-- <li>100/-</li>
                                         <li>180/-</li>
                                         <li>290/-</li> -->
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="billTotal" id="billTotal">
-                                <div class="txtTotal">Total :</div>
-                                <!-- <div class="amtTotal" id="amtTotal">305 /-</div> -->
+                                <hr>
+                                <div class="billTotal" id="billTotal">
+                                    <div class="txtTotal">Total :</div>
+                                    <!-- <div class="amtTotal" id="amtTotal">305 /-</div> -->
+                                </div>
                             </div>
                             <div class="button_1">
                                 <div class="print"><button class="printBtn" id="billPrintBtn">Print</button></div>
@@ -461,14 +464,50 @@
                                         </div>
                                     </div>
                                     <div class="button_1">
-                                        <button class="summaryDetails">Click Me*</button>
+
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary summaryDetails"
+                                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            Click Me*
+                                        </button>
+
+                                        <!-- Modal -->
+
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title" id="staticBackdropLabel"
+                                                            style="color: #2B7A0B;font-weight: 900;">Today All
+                                                            Transaction Details..
+                                                        </h2>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body" id="todaySummaryBody">
+                                                        <!-- <div class="dynamicCreateDiv" id="dynamicCreateDiv">
+
+                                                        </div> -->
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-bs-dismiss="modal">Close</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="note">*Todays all order details available. To see the details Click me</p>
                                 </div>
+                                <p class="note">*Todays all order details available. To see the details Click me</p>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- <div class="bill-status">
+                    <!-- <div class="bill-status">
                         
                         <div class="customerDetails">
                             <label class="lbl1" for="">Customer Name </label>
@@ -487,29 +526,29 @@
 
 
 
-                    </div>
                 </div>
-               
             </div>
-             <!-- Toasts -->
-             <div class="toast cs_alert" role="alert" id="cs_alert" aria-live="assertive" aria-atomic="true"
-             style="position: relative; ">
-             <div class="toast-header">
-                 <img src="" class="rounded me-2 tImg" id="tImg" alt="...">
-                 <!-- <i class="fa-solid fa-circle-info" class="rounded me-2"></i> -->
-                 <strong class="me-auto tTitle" id="tTitle"></strong>
-                 <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
-             </div>
-             <div class="toast-body tParagraph" id="tParagraph">
-                 Please select the size !
-             </div>
-         </div>
-            <!-- Toasts -->
-            
-        </div>
-        <div class="footer">
 
         </div>
+        <!-- Toasts -->
+        <div class="toast cs_alert" role="alert" id="cs_alert" aria-live="assertive" aria-atomic="true"
+            style="position: relative; ">
+            <div class="toast-header">
+                <img src="" class="rounded me-2 tImg" id="tImg" alt="...">
+                <!-- <i class="fa-solid fa-circle-info" class="rounded me-2"></i> -->
+                <strong class="me-auto tTitle" id="tTitle"></strong>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body tParagraph" id="tParagraph">
+                Please select the size !
+            </div>
+        </div>
+        <!-- Toasts -->
+
+    </div>
+    <div class="footer">
+
+    </div>
     </div>
     <script src="./js/createOrder.js"></script>
     <script src="./js/orderSatus.js"></script>

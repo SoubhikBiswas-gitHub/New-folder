@@ -10,6 +10,33 @@ html {
     font-size: 62.5%;
 }
 
+/* Loader CSS */
+#loader{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100  ;
+    background:rgb(243, 184, 174);
+    min-height: 100vh;
+}
+
+#loader img{
+    position: relative;
+    width: 50%;
+    box-shadow: 2px 1px 10px #111;
+    border-radius: 15px;
+}
+
+.dynamicCreateDiv{
+    border: 3px ridge #003865;
+    padding: 3px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #2C3333;
+    margin-bottom: 10PX;
+}
+
+
 #p1BtnClick,
 #p2BtnClick,
 #p3BtnClick,
@@ -56,6 +83,7 @@ html {
 .containerk {
     position: absolute;
     width: 100%;
+    /* display: none; */
     /* border: 3px solid rgb(128, 0, 0); */
 
 }
@@ -580,13 +608,14 @@ color: #fff;
 
 }
 
-.billcreate .button_1 button {
+.billcreate .button_1 .printBtn {
     margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 0 3px;
     font-size: 1.7rem;
     background: #F73D93;
-    width: 100%;
+   
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 35%);
-
     border: 2px solid #111;
     color: #111;
     border-radius: 5px;
@@ -694,6 +723,7 @@ margin-bottom: 3px ;
 
 .billSummary .todaySummery .summaryDetails {
     margin-right: 5px;
+    margin-bottom: 5px;
     font-size: 1.7rem;
     background: #14C38E;
     width: 50%;

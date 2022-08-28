@@ -1,6 +1,25 @@
+//loading effect
+// const Loader=document.getElementById("loader")
+
+document.onreadystatechange = function() {
+  if (document.readyState !== "complete") {
+      document.querySelector("body").style.visibility = "hidden";
+      document.querySelector("#loader").style.visibility = "visible";
+  } else {
+      document.querySelector("#loader").style.display = "none";
+      document.querySelector("body").style.visibility = "visible";
+  }
+};
+
 // ***********************************************
 // ************** Element Selector *********************
 // ***********************************************
+
+//Bill Node selector for copy to today summary
+const nodeCopyFrom=document.getElementById("nodeCopy");
+const todaySummaryModalBoby=document.getElementById("todaySummaryBody");
+
+
 //oder div Selector
 const createOrderDiv = document.getElementById("createOrder");
 
@@ -207,9 +226,10 @@ const p9PizzaName = p9Img.alt;
 // ***********************************************
 
 p1Btn.addEventListener("click", () => {
-  p1BtnCheck.checked = true;
+  checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
   if (printBtnClickCheck) {
     if (billGenerateButtonClickCheck) {
+      p1BtnCheck.checked = true;
       cancelBtnVisible(p1CancelBtn, p1Btn, p1ImgSrc, p1PizzaName);
     } else {
       billGenerateAlert();
@@ -222,6 +242,7 @@ p1Btn.addEventListener("click", () => {
 });
 
 p2Btn.addEventListener("click", () => {
+  checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
   if (printBtnClickCheck) {
     if (billGenerateButtonClickCheck) {
       p2BtnCheck.checked = true;
@@ -237,6 +258,7 @@ p2Btn.addEventListener("click", () => {
 });
 
 p3Btn.addEventListener("click", () => {
+  checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
   if (printBtnClickCheck) {
     if (billGenerateButtonClickCheck) {
       p3BtnCheck.checked = true;
@@ -252,6 +274,7 @@ p3Btn.addEventListener("click", () => {
 });
 
 p4Btn.addEventListener("click", () => {
+  checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
   if (printBtnClickCheck) {
     if (billGenerateButtonClickCheck) {
       p4BtnCheck.checked = true;
@@ -267,6 +290,7 @@ p4Btn.addEventListener("click", () => {
 });
 
 p5Btn.addEventListener("click", () => {
+  checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
   if (printBtnClickCheck) {
     if (billGenerateButtonClickCheck) {
       p5BtnCheck.checked = true;
@@ -282,6 +306,7 @@ p5Btn.addEventListener("click", () => {
 });
 
 p6Btn.addEventListener("click", () => {
+  checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
   if (printBtnClickCheck) {
     if (billGenerateButtonClickCheck) {
       p6BtnCheck.checked = true;
@@ -297,6 +322,7 @@ p6Btn.addEventListener("click", () => {
 });
 
 p7Btn.addEventListener("click", () => {
+  checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
   if (printBtnClickCheck) {
     if (billGenerateButtonClickCheck) {
       p7BtnCheck.checked = true;
@@ -312,6 +338,7 @@ p7Btn.addEventListener("click", () => {
 });
 
 p8Btn.addEventListener("click", () => {
+  checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
   if (printBtnClickCheck) {
     if (billGenerateButtonClickCheck) {
       p8BtnCheck.checked = true;
@@ -327,6 +354,7 @@ p8Btn.addEventListener("click", () => {
 });
 
 p9Btn.addEventListener("click", () => {
+  checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault();
   if (printBtnClickCheck) {
     if (billGenerateButtonClickCheck) {
       p9BtnCheck.checked = true;
@@ -1167,6 +1195,8 @@ p9lBtn.addEventListener("click", () => {
 // **** Bill Generate Clickz Event *********
 // ***********************************************
 billGenerateBtn.addEventListener("click", () => {
+
+
   var billDateTime = billDateTimeGenerator();
   //before adding removing child from bill
 
@@ -1192,6 +1222,14 @@ billGenerateBtn.addEventListener("click", () => {
 // **** Bill Print Clickz Event *********
 // ***********************************************
 billPrintBtn.addEventListener("click", () => {
+  //colone node of customer bill full and append by todays full summary node..
+  const dynamicCreateDiv=document.createElement('div');
+  dynamicCreateDiv.setAttribute("id","dynamicCreateDiv");
+  dynamicCreateDiv.setAttribute("class","dynamicCreateDiv");
+  const nodeCopyTo=nodeCopyFrom.cloneNode(true);
+  dynamicCreateDiv.appendChild(nodeCopyTo);
+  todaySummaryModalBoby.appendChild(dynamicCreateDiv);
+
   printBtnClickCheck = true;
   let tempArray = [];
   let totalSum = 0;
@@ -1200,7 +1238,6 @@ billPrintBtn.addEventListener("click", () => {
   allChildRemoveFromParentFunction(LOHPizzaDetails);
   allChildRemoveFromParentFunction(LOHPizzaPricesDetails);
   LOHtotalBill.removeChild(LOHtotalBill.lastChild);
-  //colone node of customer bill full and append by todays full summary node..
   //Adding value to summary of the day..
   for (let i = 0; i < billPrintDynamicArray.length; i = i + 4) {
     for (let j = i; j < i + 3 && j < billPrintDynamicArray.length; j++) {
@@ -1267,6 +1304,7 @@ billPrintBtn.addEventListener("click", () => {
   billPrintDynamicArray = [];
   billGenerateButtonClickCheck = true;
   printBtnClickCheck = true;
+  console.log(todayOrderSummaryArray)
 });
 // ***********************************************
 // **** Bill Print Clickz Event *********
@@ -1511,10 +1549,10 @@ const todaySummaryUpdater = (summaryObj, todayOrderSummaryArray) => {
     return;
   }
   checkObj.qtyP += summaryObj.qtyP;
-  let addPrice = parseInt(summaryObj.priceP) * parseInt(checkObj.qtyP);
+  let addPrice = parseInt(summaryObj.priceP) + parseInt(checkObj.priceP);
   checkObj.priceP = addPrice;
 };
-
+console.log(todayOrderSummaryArray)
 // ***********************************************
 // **** Utility Function *********
 // ***********************************************

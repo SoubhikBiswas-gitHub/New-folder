@@ -108,15 +108,32 @@ const createElement = (orderId, Ptype, Psize,Pprice) => {
       statusDiv.appendChild(readyStatus);
       readyStatus.src = "./assets/readyOrder.gif";
       readyStatus.style.width = "100%";
-      if (allPizzaReadyCheckingCounter === OrderReadyCheckingArray.length) {
-        billGenerateBtn.style.display = "block";
-        billGenerateButtonClickCheck = false;
-      }
+      // OrderReadyCheckingArray.filter(ele=>ele!="InCompleted");
+      // console.log(allPizzaReadyCheckingCounter)
+      // console.log(OrderReadyCheckingArray)
+      // if (allPizzaReadyCheckingCounter === OrderReadyCheckingArray.length) {
+      //   billGenerateBtn.style.display = "block";
+      //   billGenerateButtonClickCheck = false;
+      // }
     }
     if (Sec == 15 && min == 00) {
 cancelBtn.disabled = true;
     }
 
+  //   if(orderCancelCheckCounter===0){
+  //     billGenerateBtn.style.display = "none";
+  //       billGenerateButtonClickCheck = true;
+  //       //all global value resetting
+  // customerNameAvalityCheck = false;
+  // customerName = "";
+  // allPizzaReadyCheckingCounter = 0;
+  // orderDetailsArray = [];
+  // createOrderDetailsObj = {};
+  // OrderReadyCheckingArray = [];
+  // billPrintDynamicArray = [];
+  // billGenerateButtonClickCheck = true;
+  // printBtnClickCheck = true;
+  //   }
     startSec--;
   }
 
@@ -126,7 +143,7 @@ cancelBtn.disabled = true;
   //*****Promise Function***********/
   //*****************************/
 
-  chefReceived(dynamicSpan)
+  chefReceived(dynamicSpan,orderCancelcheck)
     .then(pizzaSauceAdded)
     .then(firstLayerOfCheezeAdded)
     .then(toppingsAdded)
@@ -136,9 +153,12 @@ cancelBtn.disabled = true;
     .then(packageReceivedAtCounter)
     .then(() => {
       dynamicOrderStatus.textContent = "Package received at counter";
-      
+				// OrderReadyCheckingArray.push("Completed")
     })
-    .catch((err) => (dynamicOrderStatus.textContent = `${err}`));
+    .catch((err) => {
+      // (dynamicOrderStatus.textContent = `${err}`)
+      // OrderReadyCheckingArray.push("china")
+  });
 
   //*****************************/
   //*****Returning Parent Div***********/

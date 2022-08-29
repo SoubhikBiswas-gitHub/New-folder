@@ -18,11 +18,16 @@ document.onreadystatechange = function () {
 //Bill Node selector for copy to today summary
 const nodeCopyFrom = document.getElementById("nodeCopy");
 const todaySummaryModalBoby = document.getElementById("todaySummaryBody");
+const billParent =document.getElementById("billDiv");
 
 //oder div Selector
 const createOrderDiv = document.getElementById("createOrder");
+const createOrderDivParent=createOrderDiv.parentElement
+console.log(createOrderDivParent)
 
 //bill Generator Button
+const totalWaitTimeSpanWithTitel =document.getElementById("totalWaitTime");
+const totalWaitTimeSpan=document.getElementById("totalWT");
 const billGenerateBtn = document.getElementById("generateBillBtn");
 
 //cs_alert Selector
@@ -180,7 +185,7 @@ let createOrderDetailsObj = {};
 //it will store all order process/after complete successful order push true --control timer function
 let OrderReadyCheckingArray = [];
 //order executer counter- control timer function
-let allPizzaReadyCheckingCounter = 0;
+let totalOrderTime=0;
 //click event check for bill generate button- control timer function
 let billGenerateButtonClickCheck = true;
 // pass the biiling all element node to loh and sod
@@ -192,7 +197,12 @@ let todayOrderSummaryArray = [];
 //whole day summary object
 let summaryDayObj = {};
 
-let orderCancelcheck = false;
+let orderCancelcheck = true;
+
+
+var resetTotalInterval;
+let totalWaitMin;
+let totalWaitSec;
 
 //Image Source :
 const p1ImgSrc = p1Img.src;
@@ -1194,6 +1204,7 @@ p9lBtn.addEventListener("click", () => {
 // **** Bill Generate Clickz Event *********
 // ***********************************************
 billGenerateBtn.addEventListener("click", () => {
+  createOrderDivParent.style.background="url(./assets/orderbg.gif)";
   var billDateTime = billDateTimeGenerator();
   //before adding removing child from bill
   console.log(orderDetailsArray);
@@ -1207,11 +1218,15 @@ billGenerateBtn.addEventListener("click", () => {
   billGenerateButtonClickCheck = true;
   customerName = "";
   billDateTime = "";
-  allPizzaReadyCheckingCounter = 0;
+  totalOrderTime = 0;
   OrderReadyCheckingArray = [];
   checkBoxUnchacked();
   cancelBtnHide();
   pointerEventSetDefault();
+  totalWaitTimeSpanWithTitel.style.display="none"
+  billGenerateBtn.style.display = "none";
+  billParent.style.display = "none";
+
 });
 
 // ***********************************************
@@ -1297,7 +1312,7 @@ billPrintBtn.addEventListener("click", () => {
   //all global value resetting
   customerNameAvalityCheck = false;
   customerName = "";
-  allPizzaReadyCheckingCounter = 0;
+  totalOrderTime = 0;
   orderDetailsArray = [];
   createOrderDetailsObj = {};
   OrderReadyCheckingArray = [];
@@ -1355,6 +1370,7 @@ const sizeSmall_Medium_Large_BtnSameUtilityFunction = (
   pizzaSizeValue,
   pizzaPriceValue
 ) => {
+  createOrderDivParent.style.background="none";
   const pizzaSizeValue_ = pizzaSizeValue;
   const pizzaPriceValue_ = pizzaPriceValue;
   const pizzaNameValue_ = pizzaNameValue;
@@ -1378,7 +1394,14 @@ const sizeSmall_Medium_Large_BtnSameUtilityFunction = (
   };
   pizzaQtyValueUpdater(tempObj, orderDetailsArray);
   tempObj = {};
-  allPizzaReadyCheckingCounter++;
+
+
+  totalWaitTimeSpanWithTitel.style.display="block";
+  if(totalOrderTime==0){
+    totalWaitTime(60);
+  }else{
+
+  }
 };
 
 // ***********************************************
@@ -1579,6 +1602,8 @@ const todaySummaryUpdater = (summaryObj, todayOrderSummaryArray) => {
   checkObj.priceP = addPrice;
 };
 // console.log(todayOrderSummaryArray)
+
+
 document.querySelector("#createOrder").addEventListener("click", function (e) {
   if (e.target && e.target.id == "cncl") {
     const hideNode = e.target.parentNode.parentNode.parentNode //going parent master node
@@ -1592,21 +1617,61 @@ document.querySelector("#createOrder").addEventListener("click", function (e) {
     const d_3 = d_2.nextElementSibling; // --->want  ----> Size
     const d_4 = d_3.nextElementSibling; //don't want -->hr
     const d_5 = d_4.nextElementSibling; // --->want  ----> Price
+    const f= c.nextElementSibling
+    const g=f.firstElementChild
+    const h=g.firstElementChild;
+    const h_1=g.firstElementChild;
+    const h_2=h_1.nextElementSibling;
     const removeName = d_1.textContent.split(":")[1].trim();
     const removeSize = d_3.textContent.split(":")[1].trim();
     const removePrice = d_5.textContent.split(":")[1].trim();
+    const removeTime = h_2.textContent.split(":")[1].trim();
+
     tempRemoveObj = {
       PizzaName: removeName,
       SizeValue: removeSize,
       QtyValue: 1,
       PriceValue: removePrice,
     };
+    console.log(f)
+    console.log(removeTime)
     afterCancelValueUpdater(tempRemoveObj, orderDetailsArray);
     document.querySelector("#createOrder").removeChild(hideNode);
-    orderCancelcheck = true;
-    // allPizzaReadyCheckingCounter--;
+    orderCancelcheck = false;
+
+  //   totalOrderTime-=removeTime
+  // totalWaitTime(totalOrderTime)
   }
 });
+
+
+ //*****************************/
+  //*****total wait Time Function***********/
+  //*****************************/
+const totalWaitTime=(totalOrderTime)=>{
+  resetTotalInterval&&clearInterval(resetTotalInterval);
+  totalWaitSec=0;
+   totalWaitSec = totalWaitSec+ parseInt(totalOrderTime)  ;
+    resetTotalInterval = setInterval(updateCounterTotal, 1000);
+   function updateCounterTotal() {
+    let tmin = Math.floor(totalWaitSec / 60);
+    let tsec = totalWaitSec % 60;
+    console.log(tmin)
+    console.log(tsec)
+    tsec = tsec < 10 ? "0" + tsec : tsec;
+    tmin = tmin < 10 ? "0" + tmin : tmin;
+    totalWaitTimeSpan.textContent = `${tmin}:${tsec}`;
+    if (tsec == 00 && tmin == 00) {
+      clearInterval(resetTotalInterval);
+      totalWaitTimeSpan.textContent = `00:00`;
+      billGenerateBtn.style.display = "block";
+      billGenerateButtonClickCheck = false;
+    }
+    totalWaitSec--;
+    // return totalWaitSec;
+  }
+}
+
 
 // ***********************************************
 // **** Utility Function *********

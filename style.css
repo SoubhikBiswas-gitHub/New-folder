@@ -93,18 +93,12 @@ html {
     position: fixed;
     z-index: 100;
     border-bottom: 2px solid rgba(255, 0, 39, 0.89);
-    /* border: 3px solid green; */
     width: 100%;
     padding: 5px;
     display: flex;
     flex-direction: row;
-    /* box-shadow: 14px 14px 28px #828282,
-        -14px -14px 28px #ffffff; */
     justify-content: flex-start;
     background: linear-gradient(295deg, rgba(255, 0, 39, 0.89) 0%, rgba(255, 255, 255, 1) 80%);
-    /* background: linear-gradient(180deg, rgba(255,0,39,0.8827906162464986) 0%, rgba(255,255,255,1) 80%); */
-    /* background: linear-gradient(185deg, rgba(255,0,39,1) 18%, rgba(255,255,255,1) 59%, rgba(255,255,255,1) 98%); */
-    /* background: linear-gradient(90deg, #fff 25%, #DF7861 100%); */
 }
 
 ._header .header-left {
@@ -115,7 +109,7 @@ html {
 }
 
 ._header .header-left img {
-    width: 9rem;
+    width: 10rem;
 }
 
 ._header .header-left .title_d {
@@ -124,7 +118,6 @@ html {
 }
 
 ._header .header-left .title_p {
-
     font-size: 3rem;
     font-weight: 900;
     color: #42032C;
@@ -138,9 +131,9 @@ html {
 
 ._header .contact_d {
     font-family: 'Caveat Brush', cursive;
-    position: relative;
+    position: absolute;
     top: 30px;
-    left: 45%;
+    left: 80%;
     font-size: 2.5rem;
     font-weight: 900;
     color: #2B4865;
@@ -342,6 +335,10 @@ html {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+background-image: url(./assets/orderbg.gif);
+    background-repeat: no-repeat;
+    background-position: top ;
+    background-size:   contain  ;
 }
 
 .create-order {
@@ -484,8 +481,28 @@ html {
 .order .generateBill{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.order .generateBill .totalWaitTime{
+padding: 3px 3px;
+font-size: 3rem;
+font-weight: 900;
+border-radius: 5px;
+background: #9C9EFE;
+text-align: center;
+color: #010357;
+display: none;
+
+}
+
+.order .generateBill .totalWaitTime .totalWT{
+    background: #abfa45;
+    padding: 2px 3px;
+border-radius: 5px;
+color: #1E5128;
 }
 
 .order .generateBill .generateBillBtn{
@@ -563,6 +580,11 @@ color: #fff;
     flex-direction: column;
     align-items: center;
     margin: 2px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url(./assets/orderbg.gif);
+
+    background-repeat: no-repeat;
+    background-position: top ;
+    background-size:   contain  ;
 }
 
 .billGenerator .billDiv .billcreate {
@@ -784,7 +806,7 @@ margin-bottom: 3px ;
     color: #4700D8;
     font-size: 2rem;
     font-weight: 700;
-    background: #FFEEEE;
+
     padding: 2px;
     margin: 3px;
     border-radius: 5px;
@@ -809,7 +831,7 @@ ul {
 
 
 
-@media only screen and (min-width: 280px) and (max-width: 780px) {
+/* @media only screen and (min-width: 280px) and (max-width: 780px) {
 
     html {
         font-size: 25%;
@@ -867,7 +889,20 @@ ul {
     .main-outer .billGenerator {
         width: 25%;
     }
+} */
 
 
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
 
-}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {} */

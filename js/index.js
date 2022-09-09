@@ -1225,7 +1225,7 @@ billGenerateBtn.addEventListener("click", () => {
   pointerEventSetDefault();
   totalWaitTimeSpanWithTitel.style.display="none"
   billGenerateBtn.style.display = "none";
-  billParent.style.display = "none";
+  // billParent.style.display = "none";
 
 });
 

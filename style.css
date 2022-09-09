@@ -140,6 +140,8 @@ html {
 }
 
 .containerk .main {
+    display: flex;
+
     /* margin-top: 110px; */
     /* margin-top: 11rem; */
     width: 100%;
@@ -152,6 +154,7 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 12rem;
     /* border: 5px solid rgb(9, 0, 128); */
     padding: 1px;
 }
@@ -893,16 +896,60 @@ ul {
 
 
 /* Extra small devices (phones, 600px and down) */
-/* @media only screen and (max-width: 600px) {...} */
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 25%;
+    }
+
+    .containerk .main {
+        margin-top: 18rem;
+    }
+
+    .main-outer .pizza-type {
+        width: 30%;
+    }
+
+    .main-outer .order {
+        width: 37%;
+    }
+
+    .main-outer .billGenerator {
+        width: 37%;
+    }
+
+    .order .order-preview {
+        width: 100%;
+    }
+
+
+    .main-outer .pizza-type .pizza-details {
+
+        width: 80%;
+
+    }
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-/* @media only screen and (min-width: 600px) {...} */
+/*@media only screen and (min-width: 600px) {
+    ...
+}*/
 
 /* Medium devices (landscape tablets, 768px and up) */
-/* @media only screen and (min-width: 768px) {...} */
+/*@media only screen and (min-width: 768px) {
+    ...
+}*//*
 
 /* Large devices (laptops/desktops, 992px and up) */
-/* @media only screen and (min-width: 992px) {...} */
+/*@media only screen and (min-width: 992px) {
+    ...
+}*/
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media only screen and (min-width: 1200px) {} */
+@media only screen and (min-width: 1200px) {
+        
+    html {
+            font-size: 42%;
+        }
+    
+        
+    }

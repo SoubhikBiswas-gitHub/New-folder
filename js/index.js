@@ -1,6 +1,5 @@
 //loading effect
-// const Loader=document.getElementById("loader")
-// import{resetInterval} from './createOrder'
+
 document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
     document.querySelector("body").style.visibility = "hidden";
@@ -8,12 +7,20 @@ document.onreadystatechange = function () {
   } else {
     document.querySelector("#loader").style.display = "none";
     document.querySelector("body").style.visibility = "visible";
+    getNewQuote();
   }
 };
+
 
 // ***********************************************
 // ************** Element Selector *********************
 // ***********************************************
+//Quote Generator
+const text=document.getElementById("quote");
+const author=document.getElementById("author");
+const tweetButton=document.getElementById("tweet");
+
+
 
 //Bill Node selector for copy to today summary
 const nodeCopyFrom = document.getElementById("nodeCopy");
@@ -166,7 +173,11 @@ const TDSPizzaPrices = document.getElementById("tdsPizzaPrices");
 const TDSBillTotal = document.getElementById("tdsBillTotal");
 
 //Today Summery items Selector
-
+const summaryDetails=document.getElementById("summaryDetails");
+let todaySummaryBody= document.getElementById("todaysAllDetails");
+const fullSummery=document.getElementById("fullSummery")
+const printBtn = document.getElementById("print")
+const summaryHide = document.getElementById("summaryHide")
 // ***********************************************
 // ************** Element Selector *********************
 // ***********************************************
@@ -1407,6 +1418,85 @@ const sizeSmall_Medium_Large_BtnSameUtilityFunction = (
 // ***********************************************
 // ****all Size button Same utility Function *********
 // ***********************************************
+
+
+
+// ***********************************************
+// ****Footer Quote Generator *********
+// ***********************************************
+
+
+const getNewQuote = async () =>
+{
+    //api for quotes
+    var url="https://type.fit/api/quotes";    
+
+    // fetch the data from api
+    const response=await fetch(url);
+    console.log(typeof response);
+    //convert response to json and store it in quotes array
+    const allQuotes = await response.json();
+
+    // Generates a random number between 0 and the length of the quotes array
+    const indx = Math.floor(Math.random()*allQuotes.length);
+
+    //Store the quote present at the randomly generated index
+    const quote=allQuotes[indx].text;
+
+    //Store the author of the respective quote
+    const auth=allQuotes[indx].author;
+
+    if(auth==null)
+    {
+        author = "Anonymous";
+    }
+
+    //function to dynamically display the quote and the author
+    text.innerHTML=quote;
+    author.innerHTML="~ "+auth;
+
+    //tweet the quote
+    tweetButton.href="https://twitter.com/intent/tweet?text="+quote+" ~ "+auth;
+}
+
+
+// ***********************************************
+// ****Footer Quote Generator *********
+// ***********************************************
+
+
+
+
+
+
+
+// ***********************************************
+// ****Today summary utility Function *********
+// ***********************************************
+
+summaryDetails.addEventListener("click",()=>{
+  fullSummery.style.display="block"
+})
+
+printBtn.addEventListener("click",()=>{
+  // fullSummery.print()
+  let divContents = fullSummery.innerHTML;  
+  let printWindow =  window.open(divContents, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=0,left=0,width=1000,height=2000");  
+  printWindow.document.write(divContents);   
+  printWindow.print(); 
+  printWindow.close();  
+})
+
+summaryHide.addEventListener("click",()=>{
+  fullSummery.style.display="none"
+})
+
+
+// ***********************************************
+// ****Today summary utility Function *********
+// ***********************************************
+
+
 
 // ***********************************************
 // **** Utility Function *********

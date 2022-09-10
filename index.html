@@ -16,331 +16,331 @@
     <div id="loader">
         <img src="./assets/loading.gif" alt="loading" srcset="">
     </div>
-    <div class="containerk">
-        <div class="header_">
-            <div class="logo_">
-                <img src="./assets/bg remove logo.png" alt="logo" srcset="">
-                <div class="title_d">
-                    <span class="title_p">PizzaMart</span>
-                    <span class="subtitle_s">A delicious food court..</span>
-                </div>
-            </div>
-            <div class="list_items">
-                <ul>
-                    <li><a href="#type">Pizza Corner</a></li>
-                    <li><a href="#track">Order track</a></li>
-                    <li><a href="#bill">Billing</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+    <!-- <div class="containerk"> -->
+    <header class="header_">
+        <div class="logo_">
+            <img src="./assets/bg remove logo.png" alt="logo" srcset="">
+            <div class="title_d">
+                <span class="title_p">PizzaMart</span>
+                <span class="subtitle_s">A delicious food court..</span>
             </div>
         </div>
-        <!-- <hr class="hr"> -->
+        <div class="list_items">
+            <ul>
+                <li><a href="#type">Pizza Corner</a></li>
+                <li><a href="#track">Order track</a></li>
+                <li><a href="#bill">Billing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- <hr class="hr"> -->
+
+
+    <main class="main">
+        <!-- Toasts -->
+        <div class="toast cs_alert" role="alert" id="cs_alert" aria-live="assertive" aria-atomic="true"
+            style="position: relative; ">
+            <div class="toast-header">
+                <img src="" class="rounded me-2 tImg" id="tImg" alt="...">
+                <!-- <i class="fa-solid fa-circle-info" class="rounded me-2"></i> -->
+                <strong class="me-auto tTitle" id="tTitle"></strong>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body tParagraph" id="tParagraph">
+                Please select the size !
+            </div>
+        </div>
         <div class="hero">
 
         </div>
+        <!-- Toasts -->
+        <div class="main-outer">
 
-        <div class="main">
-            <!-- Toasts -->
-            <div class="toast cs_alert" role="alert" id="cs_alert" aria-live="assertive" aria-atomic="true"
-                style="position: relative; ">
-                <div class="toast-header">
-                    <img src="" class="rounded me-2 tImg" id="tImg" alt="...">
-                    <!-- <i class="fa-solid fa-circle-info" class="rounded me-2"></i> -->
-                    <strong class="me-auto tTitle" id="tTitle"></strong>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
-                </div>
-                <div class="toast-body tParagraph" id="tParagraph">
-                    Please select the size !
+            <!-- ****************************
+                *****Pizza Type*************
+                **************************** -->
+            <div class="pizzaTypeDiv" id="type">
+                <div class="lblDesign"><label class="lbl" for="">Available Items</label></div>
+                <div class="pizza-type">
+
+                    <!-- **************************** -->
+                    <!-- --------Corn & Cheese ----------->
+                    <!-- **************************** -->
+
+                    <div class="pizza-details">
+                        <input type="checkbox" name="" id="p1BtnClick">
+                        <div class="pizza">
+                            <button id="p1Btn" class="pizza-img">
+                                <div class="price">
+                                    <span>
+                                        <span id="p1si">Small</span>: Rs <span id="p1p">110</span>/-
+                                    </span>
+                                </div>
+                                <img id="p1Img" src="./assets/Corn&Cheese.jpg" alt="Corn & Cheese" srcset="">
+                            </button>
+                            <button class="cancel" id="p1cancel">Cancel</button>
+                        </div>
+                        <span class="name" id="p1n"> Corn & Cheese </span>
+                        <div class="sizes">
+                            <button id="p1s" class="small">S</button>
+                            <button id="p1m" class="medium">M</button>
+                            <button id="p1l" class="large">L</button>
+                        </div>
+                    </div>
+                    <!-- **************************** -->
+                    <!-- --------Corn & Cheese ----------->
+                    <!-- **************************** -->
+
+                    <!-- **************************** -->
+                    <!-- --------Deluxe Veggie ----------->
+                    <!-- **************************** -->
+                    <div class="pizza-details">
+                        <input type="checkbox" name="" id="p2BtnClick">
+                        <div class="pizza">
+                            <button id="p2Btn" class="pizza-img">
+                                <div class="price">
+                                    <span>
+                                        <span id="p2si">Small</span>: Rs <span id="p2p">160</span>/-
+                                    </span>
+                                </div>
+                                <img src="./assets/DeluxeVeggie.jpg" id="p2Img" alt="Deluxe Veggie" srcset="">
+                            </button>
+                            <button class="cancel" id="p2cancel">Cancel</button>
+
+                        </div>
+                        <span class="name" id="p2n"> Deluxe Veggie</span>
+                        <div class="sizes">
+                            <button id="p2s" class="small">S</button>
+                            <button id="p2m" class="medium">M</button>
+                            <button id="p2l" class="large">L</button>
+                        </div>
+                    </div>
+                    <!-- **************************** -->
+                    <!-- --------Deluxe Veggie ----------->
+                    <!-- **************************** -->
+
+                    <!-- **************************** -->
+                    <!-- --------Digital Veggie Paradise ----------->
+                    <!-- **************************** -->
+
+                    <div class="pizza-details">
+                        <input type="checkbox" name="" id="p3BtnClick">
+                        <div class="pizza">
+                            <button id="p3Btn" class="pizza-img">
+                                <div class="price">
+                                    <span>
+                                        <span id="p3si">Small</span>: Rs <span id="p3p">130</span>/-
+                                    </span>
+                                </div>
+                                <img src="./assets/DigitalVeggieParadise.jpg" id="p3Img" alt="Veggie Paradise"
+                                    srcset="">
+                            </button>
+                            <button class="cancel" id="p3cancel">Cancel</button>
+
+                        </div>
+                        <span class="name" id="p3n">Veggie Paradise</span>
+                        <div class="sizes">
+                            <button id="p3s" class="small">S</button>
+                            <button id="p3m" class="medium">M</button>
+                            <button id="p3l" class="large">L</button>
+                        </div>
+                    </div>
+
+                    <!-- **************************** -->
+                    <!-- --------Digital Veggie Paradise ----------->
+                    <!-- **************************** -->
+
+                    <!-- **************************** -->
+                    <!-- --------Fresh Veggie ----------->
+                    <!-- **************************** -->
+                    <div class="pizza-details">
+                        <input type="checkbox" name="" id="p4BtnClick">
+                        <div class="pizza">
+                            <button id="p4Btn" class="pizza-img">
+                                <div class="price">
+                                    <span>
+                                        <span id="p4si">Small</span>: Rs <span id="p4p">120</span>/-
+                                    </span>
+                                </div>
+                                <img src="./assets/FreshVeggie.jpg" id="p4Img" alt="Fresh Veggie" srcset="">
+                            </button>
+                            <button class="cancel" id="p4cancel">Cancel</button>
+
+                        </div>
+                        <span class="name" id="p4n"> Fresh Veggie</span>
+                        <div class="sizes">
+                            <button id="p4s" class="small">S</button>
+                            <button id="p4m" class="medium">M</button>
+                            <button id="p4l" class="large">L</button>
+                        </div>
+                    </div>
+                    <!-- **************************** -->
+                    <!-- --------Fresh Veggie ----------->
+                    <!-- **************************** -->
+
+                    <!-- **************************** -->
+                    <!-- --------Indian Tandoori Paneer ----------->
+                    <!-- **************************** -->
+
+                    <div class="pizza-details">
+                        <input type="checkbox" name="" id="p5BtnClick">
+                        <div class="pizza">
+                            <button id="p5Btn" class="pizza-img">
+                                <div class="price">
+                                    <span>
+                                        <span id="p5si">Small</span>: Rs <span id="p5p">180</span>/-
+                                    </span>
+                                </div>
+                                <img src="./assets/IndianTandooriPaneer.jpg" id="p5Img" alt="Tandoori Paneer" srcset="">
+                            </button>
+                            <button class="cancel" id="p5cancel">Cancel</button>
+
+                        </div>
+                        <span class="name" id="p5n">Tandoori Paneer</span>
+                        <div class="sizes">
+                            <button id="p5s" class="small">S</button>
+                            <button id="p5m" class="medium">M</button>
+                            <button id="p5l" class="large">L</button>
+                        </div>
+                    </div>
+                    <!-- **************************** -->
+                    <!-- --------Indian Tandoori Paneer ----------->
+                    <!-- **************************** -->
+
+                    <!-- **************************** -->
+                    <!-- --------Mexican GreenWave ----------->
+                    <!-- **************************** -->
+
+                    <div class="pizza-details">
+                        <input type="checkbox" name="" id="p6BtnClick">
+                        <div class="pizza">
+                            <button id="p6Btn" class="pizza-img">
+                                <div class="price">
+                                    <span>
+                                        <span id="p6si">Small</span>: Rs <span id="p6p">170</span>/-
+                                    </span>
+                                </div>
+                                <img src="./assets/MexicanGreenWave.jpg" id="p6Img" alt="Mexican Green" srcset="">
+                            </button>
+                            <button class="cancel" id="p6cancel">Cancel</button>
+
+                        </div>
+                        <span class="name" id="p6n"> Mexican Green</span>
+                        <div class="sizes">
+                            <button id="p6s" class="small">S</button>
+                            <button id="p6m" class="medium">M</button>
+                            <button id="p6l" class="large">L</button>
+                        </div>
+                    </div>
+                    <!-- **************************** -->
+                    <!-- --------Mexican GreenWave ----------->
+                    <!-- **************************** -->
+
+                    <!-- **************************** -->
+                    <!-- --------Paneer Makhni ----------->
+                    <!-- **************************** -->
+
+                    <div class="pizza-details">
+                        <input type="checkbox" name="" id="p7BtnClick">
+                        <div class="pizza">
+                            <button id="p7Btn" class="pizza-img">
+                                <div class="price">
+                                    <span>
+                                        <span id="p7si">Small</span>: Rs <span id="p7p">140</span>/-
+                                    </span>
+                                </div>
+                                <img src="./assets/PaneerMakhni.jpg" id="p7Img" alt="Paneer Makhni" srcset="">
+                            </button>
+                            <button class="cancel" id="p7cancel">Cancel</button>
+
+                        </div>
+                        <span class="name" id="p7n">Paneer Makhni </span>
+                        <div class="sizes">
+                            <button id="p7s" class="small">S</button>
+                            <button id="p7m" class="medium">M</button>
+                            <button id="p7l" class="large">L</button>
+                        </div>
+                    </div>
+                    <!-- **************************** -->
+                    <!-- --------Paneer Makhni ----------->
+                    <!-- **************************** -->
+
+                    <!-- **************************** -->
+                    <!-- --------Peppy Paneer ----------->
+                    <!-- **************************** -->
+
+                    <div class="pizza-details">
+                        <input type="checkbox" name="" id="p8BtnClick">
+                        <div class="pizza">
+                            <button id="p8Btn" class="pizza-img">
+                                <div class="price">
+                                    <span>
+                                        <span id="p8si">Small</span>: Rs <span id="p8p">145</span>/-
+                                    </span>
+                                </div>
+                                <img src="./assets/Peppy_Paneer.jpg" id="p8Img" alt="Peppy Paneer" srcset="">
+                            </button>
+                            <button class="cancel" id="p8cancel">Cancel</button>
+
+                        </div>
+                        <span class="name" id="p8n"> Peppy Paneer</span>
+                        <div class="sizes">
+                            <button id="p8s" class="small">S</button>
+                            <button id="p8m" class="medium">M</button>
+                            <button id="p8l" class="large">L</button>
+                        </div>
+                    </div>
+                    <!-- **************************** -->
+                    <!-- --------Peppy Paneer ----------->
+                    <!-- **************************** -->
+
+                    <!-- **************************** -->
+                    <!-- --------Veg Extravaganz ----------->
+                    <!-- **************************** -->
+
+                    <div class="pizza-details">
+                        <input type="checkbox" name="" id="p9BtnClick">
+                        <div class="pizza">
+                            <button id="p9Btn" class="pizza-img">
+                                <div class="price">
+                                    <span>
+                                        <span id="p9si">Small</span>: Rs <span id="p9p">125</span>/-
+                                    </span>
+                                </div>
+                                <img src="./assets/VegExtravaganz.jpg" id="p9Img" alt="Veg Extravaganz" srcset="">
+                            </button>
+                            <button class="cancel" id="p9cancel">Cancel</button>
+
+                        </div>
+                        <span class="name" id="p9n"> Veg Extravaganz</span>
+                        <div class="sizes">
+                            <button id="p9s" class="small">S</button>
+                            <button id="p9m" class="medium">M</button>
+                            <button id="p9l" class="large">L</button>
+                        </div>
+                    </div>
+
+                    <!-- **************************** -->
+                    <!-- --------Veg Extravaganz ----------->
+                    <!-- **************************** -->
+
                 </div>
             </div>
-            <!-- Toasts -->
-            <div class="main-outer">
-
-                <!-- ****************************
-                *****Pizza Type*************
-                **************************** -->
-                <div class="pizzaTypeDiv" id="type">
-                    <div class="lblDesign"><label class="lbl" for="">Available Items</label></div>
-                    <div class="pizza-type">
-
-                        <!-- **************************** -->
-                        <!-- --------Corn & Cheese ----------->
-                        <!-- **************************** -->
-
-                        <div class="pizza-details">
-                            <input type="checkbox" name="" id="p1BtnClick">
-                            <div class="pizza">
-                                <button id="p1Btn" class="pizza-img">
-                                    <div class="price">
-                                        <span>
-                                            <span id="p1si">Small</span>: Rs <span id="p1p">110</span>/-
-                                        </span>
-                                    </div>
-                                    <img id="p1Img" src="./assets/Corn&Cheese.jpg" alt="Corn & Cheese" srcset="">
-                                </button>
-                                <button class="cancel" id="p1cancel">Cancel</button>
-                            </div>
-                            <span class="name" id="p1n"> Corn & Cheese </span>
-                            <div class="sizes">
-                                <button id="p1s" class="small">S</button>
-                                <button id="p1m" class="medium">M</button>
-                                <button id="p1l" class="large">L</button>
-                            </div>
-                        </div>
-                        <!-- **************************** -->
-                        <!-- --------Corn & Cheese ----------->
-                        <!-- **************************** -->
-
-                        <!-- **************************** -->
-                        <!-- --------Deluxe Veggie ----------->
-                        <!-- **************************** -->
-                        <div class="pizza-details">
-                            <input type="checkbox" name="" id="p2BtnClick">
-                            <div class="pizza">
-                                <button id="p2Btn" class="pizza-img">
-                                    <div class="price">
-                                        <span>
-                                            <span id="p2si">Small</span>: Rs <span id="p2p">160</span>/-
-                                        </span>
-                                    </div>
-                                    <img src="./assets/DeluxeVeggie.jpg" id="p2Img" alt="Deluxe Veggie" srcset="">
-                                </button>
-                                <button class="cancel" id="p2cancel">Cancel</button>
-
-                            </div>
-                            <span class="name" id="p2n"> Deluxe Veggie</span>
-                            <div class="sizes">
-                                <button id="p2s" class="small">S</button>
-                                <button id="p2m" class="medium">M</button>
-                                <button id="p2l" class="large">L</button>
-                            </div>
-                        </div>
-                        <!-- **************************** -->
-                        <!-- --------Deluxe Veggie ----------->
-                        <!-- **************************** -->
-
-                        <!-- **************************** -->
-                        <!-- --------Digital Veggie Paradise ----------->
-                        <!-- **************************** -->
-
-                        <div class="pizza-details">
-                            <input type="checkbox" name="" id="p3BtnClick">
-                            <div class="pizza">
-                                <button id="p3Btn" class="pizza-img">
-                                    <div class="price">
-                                        <span>
-                                            <span id="p3si">Small</span>: Rs <span id="p3p">130</span>/-
-                                        </span>
-                                    </div>
-                                    <img src="./assets/DigitalVeggieParadise.jpg" id="p3Img" alt="Veggie Paradise"
-                                        srcset="">
-                                </button>
-                                <button class="cancel" id="p3cancel">Cancel</button>
-
-                            </div>
-                            <span class="name" id="p3n">Veggie Paradise</span>
-                            <div class="sizes">
-                                <button id="p3s" class="small">S</button>
-                                <button id="p3m" class="medium">M</button>
-                                <button id="p3l" class="large">L</button>
-                            </div>
-                        </div>
-
-                        <!-- **************************** -->
-                        <!-- --------Digital Veggie Paradise ----------->
-                        <!-- **************************** -->
-
-                        <!-- **************************** -->
-                        <!-- --------Fresh Veggie ----------->
-                        <!-- **************************** -->
-                        <div class="pizza-details">
-                            <input type="checkbox" name="" id="p4BtnClick">
-                            <div class="pizza">
-                                <button id="p4Btn" class="pizza-img">
-                                    <div class="price">
-                                        <span>
-                                            <span id="p4si">Small</span>: Rs <span id="p4p">120</span>/-
-                                        </span>
-                                    </div>
-                                    <img src="./assets/FreshVeggie.jpg" id="p4Img" alt="Fresh Veggie" srcset="">
-                                </button>
-                                <button class="cancel" id="p4cancel">Cancel</button>
-
-                            </div>
-                            <span class="name" id="p4n"> Fresh Veggie</span>
-                            <div class="sizes">
-                                <button id="p4s" class="small">S</button>
-                                <button id="p4m" class="medium">M</button>
-                                <button id="p4l" class="large">L</button>
-                            </div>
-                        </div>
-                        <!-- **************************** -->
-                        <!-- --------Fresh Veggie ----------->
-                        <!-- **************************** -->
-
-                        <!-- **************************** -->
-                        <!-- --------Indian Tandoori Paneer ----------->
-                        <!-- **************************** -->
-
-                        <div class="pizza-details">
-                            <input type="checkbox" name="" id="p5BtnClick">
-                            <div class="pizza">
-                                <button id="p5Btn" class="pizza-img">
-                                    <div class="price">
-                                        <span>
-                                            <span id="p5si">Small</span>: Rs <span id="p5p">180</span>/-
-                                        </span>
-                                    </div>
-                                    <img src="./assets/IndianTandooriPaneer.jpg" id="p5Img" alt="Tandoori Paneer"
-                                        srcset="">
-                                </button>
-                                <button class="cancel" id="p5cancel">Cancel</button>
-
-                            </div>
-                            <span class="name" id="p5n">Tandoori Paneer</span>
-                            <div class="sizes">
-                                <button id="p5s" class="small">S</button>
-                                <button id="p5m" class="medium">M</button>
-                                <button id="p5l" class="large">L</button>
-                            </div>
-                        </div>
-                        <!-- **************************** -->
-                        <!-- --------Indian Tandoori Paneer ----------->
-                        <!-- **************************** -->
-
-                        <!-- **************************** -->
-                        <!-- --------Mexican GreenWave ----------->
-                        <!-- **************************** -->
-
-                        <div class="pizza-details">
-                            <input type="checkbox" name="" id="p6BtnClick">
-                            <div class="pizza">
-                                <button id="p6Btn" class="pizza-img">
-                                    <div class="price">
-                                        <span>
-                                            <span id="p6si">Small</span>: Rs <span id="p6p">170</span>/-
-                                        </span>
-                                    </div>
-                                    <img src="./assets/MexicanGreenWave.jpg" id="p6Img" alt="Mexican Green" srcset="">
-                                </button>
-                                <button class="cancel" id="p6cancel">Cancel</button>
-
-                            </div>
-                            <span class="name" id="p6n"> Mexican Green</span>
-                            <div class="sizes">
-                                <button id="p6s" class="small">S</button>
-                                <button id="p6m" class="medium">M</button>
-                                <button id="p6l" class="large">L</button>
-                            </div>
-                        </div>
-                        <!-- **************************** -->
-                        <!-- --------Mexican GreenWave ----------->
-                        <!-- **************************** -->
-
-                        <!-- **************************** -->
-                        <!-- --------Paneer Makhni ----------->
-                        <!-- **************************** -->
-
-                        <div class="pizza-details">
-                            <input type="checkbox" name="" id="p7BtnClick">
-                            <div class="pizza">
-                                <button id="p7Btn" class="pizza-img">
-                                    <div class="price">
-                                        <span>
-                                            <span id="p7si">Small</span>: Rs <span id="p7p">140</span>/-
-                                        </span>
-                                    </div>
-                                    <img src="./assets/PaneerMakhni.jpg" id="p7Img" alt="Paneer Makhni" srcset="">
-                                </button>
-                                <button class="cancel" id="p7cancel">Cancel</button>
-
-                            </div>
-                            <span class="name" id="p7n">Paneer Makhni </span>
-                            <div class="sizes">
-                                <button id="p7s" class="small">S</button>
-                                <button id="p7m" class="medium">M</button>
-                                <button id="p7l" class="large">L</button>
-                            </div>
-                        </div>
-                        <!-- **************************** -->
-                        <!-- --------Paneer Makhni ----------->
-                        <!-- **************************** -->
-
-                        <!-- **************************** -->
-                        <!-- --------Peppy Paneer ----------->
-                        <!-- **************************** -->
-
-                        <div class="pizza-details">
-                            <input type="checkbox" name="" id="p8BtnClick">
-                            <div class="pizza">
-                                <button id="p8Btn" class="pizza-img">
-                                    <div class="price">
-                                        <span>
-                                            <span id="p8si">Small</span>: Rs <span id="p8p">145</span>/-
-                                        </span>
-                                    </div>
-                                    <img src="./assets/Peppy_Paneer.jpg" id="p8Img" alt="Peppy Paneer" srcset="">
-                                </button>
-                                <button class="cancel" id="p8cancel">Cancel</button>
-
-                            </div>
-                            <span class="name" id="p8n"> Peppy Paneer</span>
-                            <div class="sizes">
-                                <button id="p8s" class="small">S</button>
-                                <button id="p8m" class="medium">M</button>
-                                <button id="p8l" class="large">L</button>
-                            </div>
-                        </div>
-                        <!-- **************************** -->
-                        <!-- --------Peppy Paneer ----------->
-                        <!-- **************************** -->
-
-                        <!-- **************************** -->
-                        <!-- --------Veg Extravaganz ----------->
-                        <!-- **************************** -->
-
-                        <div class="pizza-details">
-                            <input type="checkbox" name="" id="p9BtnClick">
-                            <div class="pizza">
-                                <button id="p9Btn" class="pizza-img">
-                                    <div class="price">
-                                        <span>
-                                            <span id="p9si">Small</span>: Rs <span id="p9p">125</span>/-
-                                        </span>
-                                    </div>
-                                    <img src="./assets/VegExtravaganz.jpg" id="p9Img" alt="Veg Extravaganz" srcset="">
-                                </button>
-                                <button class="cancel" id="p9cancel">Cancel</button>
-
-                            </div>
-                            <span class="name" id="p9n"> Veg Extravaganz</span>
-                            <div class="sizes">
-                                <button id="p9s" class="small">S</button>
-                                <button id="p9m" class="medium">M</button>
-                                <button id="p9l" class="large">L</button>
-                            </div>
-                        </div>
-
-                        <!-- **************************** -->
-                        <!-- --------Veg Extravaganz ----------->
-                        <!-- **************************** -->
-
-                    </div>
-                </div>
-                <!-- ****************************
+            <!-- ****************************
                 *****Pizza Type*************
                 **************************** -->
 
-                <!-- ****************************
+            <!-- ****************************
                 *****Order Create*************
                 **************************** -->
-                <div class="orderTypeDiv" id="track">
-                    <div class="lblDesign"> <label class="lbl" for="">Order Status</label></div>
-                    <div class="order ">
+            <div class="orderTypeDiv" id="track">
+                <div class="lblDesign"> <label class="lbl" for="">Order Status</label></div>
+                <div class="order " id="orderBg">
 
-                        <div class="create-order" id="createOrder">
+                    <div class="create-order" id="createOrder">
 
-                            <!-- <div class="order-preview">
+                        <!-- <div class="order-preview">
                                 <div class="order-card ">
                                     <div class="order-id">BLRPM1808221530</div>
                                     <div class="order-status">
@@ -367,211 +367,211 @@
                                 </div>
                             </div> -->
 
-                        </div>
-                        <hr>
-                        <div class="generateBill">
-                            <span id="totalWaitTime" class="totalWaitTime">Total Wait Time: <span id="totalWT"
-                                    class="totalWT">00:00</span></span>
-                            <button id="generateBillBtn" class="generateBillBtn">Generate
-                                Bill</button>
-                        </div>
+                    </div>
+                    <hr>
+                    <div class="generateBill">
+                        <span id="totalWaitTime" class="totalWaitTime">Total Wait Time: <span id="totalWT"
+                                class="totalWT">00:00</span></span>
+                        <button id="generateBillBtn" class="generateBillBtn">Generate
+                            Bill</button>
                     </div>
                 </div>
-                <!-- ****************************
+            </div>
+            <!-- ****************************
                 *****Bill Generator*************
                 **************************** -->
-                <div class="billTypeDiv">
-                    <div class="lblDesign"> <label class="lbl" for="">Billing Details </label></div>
-                    <div class="billGenerator">
+            <div class="billTypeDiv" id="bill">
+                <div class="lblDesign"> <label class="lbl" for="">Billing Details </label></div>
+                <div class="billGenerator">
 
 
-                        <div class="billDiv" id="bill">
-                            <div class="billcreate">
-                                <label class="samelblm">Customer Bill </label>
-                                <div class="nodeCopy" id="nodeCopy">
-                                    <div class="billheader">
-                                        <span class="customerNamelbl" id="billCustomerNamelbl">CustomerName:
-                                            <!-- <span class="customerName" id="billCustomerName">Soubhik</span> -->
-                                        </span>
-                                        <span class="billCreatelbl" id="billDateTimelbl">Date-Time
-                                            <!-- <span class="dateTime" id="billDateTime"> 17/02/2022 15:25:20</span> -->
-                                        </span>
-                                    </div>
+                    <div class="billDiv" >
+                        <div class="billcreate">
+                            <label class="samelblm">Customer Bill </label>
+                            <div class="nodeCopy" id="nodeCopy">
+                                <div class="billheader">
+                                    <span class="customerNamelbl" id="billCustomerNamelbl">CustomerName:
+                                        <!-- <span class="customerName" id="billCustomerName">Soubhik</span> -->
+                                    </span>
+                                    <span class="billCreatelbl" id="billDateTimelbl">Date-Time
+                                        <!-- <span class="dateTime" id="billDateTime"> 17/02/2022 15:25:20</span> -->
+                                    </span>
+                                </div>
 
-                                    <div class="content_1" id="billContent_1">
-                                        <div class="pizzaTypes">
-                                            <label>Pizza Types</label>
-                                            <ul id="billPizzaTypesList">
-                                                <!-- <li>Corn & Cheese </li>
+                                <div class="content_1" id="billContent_1">
+                                    <div class="pizzaTypes">
+                                        <label>Pizza Types</label>
+                                        <ul id="billPizzaTypesList">
+                                            <!-- <li>Corn & Cheese </li>
                                             <li>Corn & Cheese </li>
                                             <li>Corn & Cheese</li> -->
-                                            </ul>
-                                        </div>
-                                        <div class="PizzaSizes">
-                                            <label>Pizza Sizes</label>
-                                            <ul id="billPizzaSizesList">
-                                                <!-- <li>Small</li>
+                                        </ul>
+                                    </div>
+                                    <div class="PizzaSizes">
+                                        <label>Pizza Sizes</label>
+                                        <ul id="billPizzaSizesList">
+                                            <!-- <li>Small</li>
                                             <li>Medium</li>
                                             <li>Large</li> -->
-                                            </ul>
-                                        </div>
-                                        <div class="PizzaQty">
-                                            <label>Pizza Qty's</label>
-                                            <ul id="billPizzaQtysList">
-                                                <!-- <li>#2</li>
+                                        </ul>
+                                    </div>
+                                    <div class="PizzaQty">
+                                        <label>Pizza Qty's</label>
+                                        <ul id="billPizzaQtysList">
+                                            <!-- <li>#2</li>
                                             <li>#1</li>
                                             <li>#4</li> -->
-                                            </ul>
-                                        </div>
+                                        </ul>
+                                    </div>
 
-                                        <div class="pricesSummery">
-                                            <label>Amount</label>
-                                            <ul id="billPizzaPricesList">
-                                                <!-- <li>100/-</li>
+                                    <div class="pricesSummery">
+                                        <label>Amount</label>
+                                        <ul id="billPizzaPricesList">
+                                            <!-- <li>100/-</li>
                                             <li>180/-</li>
                                             <li>290/-</li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="billTotal" id="billTotal">
+                                    <div class="txtTotal">Total :</div>
+                                    <!-- <div class="amtTotal" id="amtTotal">305 /-</div> -->
+                                </div>
+                            </div>
+                            <div class="button_1">
+                                <div class="print"><button class="printBtn" id="billPrintBtn">Print</button></div>
+                            </div>
+                        </div>
+
+                        <div class="billSummary">
+                            <div class="syummeryOfDay">
+                                <label class="samelbl">Last order history</label>
+                                <div class="outer_">
+                                    <div class="lastOderHistory">
+                                        <div class=".pizzaDetails">
+                                            <label>Pizza Details</label>
+                                            <ul id="lohPizzaDetails">
+                                                <!-- <li>Corn & Cheese(large)(#2)</li>
+                                                    <li>Corn & Cheese(large)(#2)</li>
+                                                    <li>Corn & Cheese(large)(#2)</li> -->
+                                            </ul>
+                                        </div>
+                                        <div class="pricesSummery">
+                                            <label>Amount</label>
+                                            <ul id="lohPizzaPricesDetails">
+                                                <!-- <li>100/-</li>
+                                                    <li>180/-</li>
+                                                    <li>290/-</li> -->
                                             </ul>
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="billTotal" id="billTotal">
-                                        <div class="txtTotal">Total :</div>
-                                        <!-- <div class="amtTotal" id="amtTotal">305 /-</div> -->
+                                    <div class="billTotal" id="lohtotalBill">
+                                        <div class="txtTotal_">Total :</div>
+                                        <!-- <div class="amtTotal_" >305 /-</div> -->
                                     </div>
                                 </div>
-                                <div class="button_1">
-                                    <div class="print"><button class="printBtn" id="billPrintBtn">Print</button></div>
-                                </div>
-                            </div>
 
-                            <div class="billSummary">
-                                <div class="syummeryOfDay">
-                                    <label class="samelbl">Last order history</label>
-                                    <div class="outer_">
-                                        <div class="lastOderHistory">
-                                            <div class=".pizzaDetails">
+                            </div>
+                            <div class="todaySummery">
+                                <label class="samelbl">Today Summary</label>
+                                <div class="mostOuter">
+
+                                    <div class="outer_tod">
+                                        <div class="content_1">
+                                            <div class="pizzaDetails">
                                                 <label>Pizza Details</label>
-                                                <ul id="lohPizzaDetails">
-                                                    <!-- <li>Corn & Cheese(large)(#2)</li>
-                                                    <li>Corn & Cheese(large)(#2)</li>
-                                                    <li>Corn & Cheese(large)(#2)</li> -->
+                                                <ul id="tdsPizzaDetails">
+                                                    <!-- <li>Small <span>(#2)</span></li>
+                                                            <li>Medium <span>(#2)</span></li>
+                                                            <li>Large <span>(#2)</span></li> -->
                                                 </ul>
                                             </div>
                                             <div class="pricesSummery">
                                                 <label>Amount</label>
-                                                <ul id="lohPizzaPricesDetails">
+                                                <ul id="tdsPizzaPrices">
                                                     <!-- <li>100/-</li>
-                                                    <li>180/-</li>
-                                                    <li>290/-</li> -->
+                                                        <li>180/-</li>
+                                                        <li>290/-</li> -->
                                                 </ul>
                                             </div>
                                         </div>
                                         <hr>
-                                        <div class="billTotal" id="lohtotalBill">
+                                        <div class="billTotal" id="tdsBillTotal">
                                             <div class="txtTotal_">Total :</div>
                                             <!-- <div class="amtTotal_" >305 /-</div> -->
                                         </div>
                                     </div>
+                                    <div class="button_1">
+                                        <button class="summaryDetails" id="summaryDetails"><a href="#todaysAllDetails">
+                                                Click Me*</a></button>
 
-                                </div>
-                                <div class="todaySummery">
-                                    <label class="samelbl">Today Summary</label>
-                                    <div class="mostOuter">
-
-                                        <div class="outer_tod">
-                                            <div class="content_1">
-                                                <div class="pizzaDetails">
-                                                    <label>Pizza Details</label>
-                                                    <ul id="tdsPizzaDetails">
-                                                        <!-- <li>Small <span>(#2)</span></li>
-                                                            <li>Medium <span>(#2)</span></li>
-                                                            <li>Large <span>(#2)</span></li> -->
-                                                    </ul>
-                                                </div>
-                                                <div class="pricesSummery">
-                                                    <label>Amount</label>
-                                                    <ul id="tdsPizzaPrices">
-                                                        <!-- <li>100/-</li>
-                                                        <li>180/-</li>
-                                                        <li>290/-</li> -->
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="billTotal" id="tdsBillTotal">
-                                                <div class="txtTotal_">Total :</div>
-                                                <!-- <div class="amtTotal_" >305 /-</div> -->
-                                            </div>
-                                        </div>
-                                        <div class="button_1">
-                                            <button class="summaryDetails" id="summaryDetails"><a
-                                                    href="#todaysAllDetails"> Click Me*</a></button>
-
-                                        </div>
-                                        <p class="note">*Todays all order details available. To see the details Click me
-                                        </p>
                                     </div>
+                                    <p class="note">*Todays all order details available. To see the details Click me
+                                    </p>
                                 </div>
-
                             </div>
 
-                            <div class="todaysAllDetails" id="todaysAllDetails">
-                                <div class="fullSummery" id="fullSummery">
-                                    <div id="todaySummaryBody"></div>
-                                    <div class="controls">
-                                        <button class="print" id="print">Print</button>
-                                        <button class="summaryHide" id="summaryHide">Hide</button>
-                                    </div>
+                        </div>
+
+                        <div class="todaysAllDetails" id="todaysAllDetails">
+                            <div class="fullSummery" id="fullSummery">
+                                <div id="todaySummaryBody"></div>
+                                <div class="controls">
+                                    <button class="print" id="print">Print</button>
+                                    <button class="summaryHide" id="summaryHide">Hide</button>
                                 </div>
-
-
                             </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- <div class="footer" id="contact">
-            <div class="mainfooter">
-                <div class="logoFooter">
-                    <img src="./assets/Pizza Mart.png" alt="">
-                </div>
-                <div class="Quote">
-                    <!-- Quote Container -->
-                    <div class="containerQ">
-                        <!-- Quote to be Displayed Here -->
-                        <h1>
-                            <i class="fas fa-quote-left"></i>
-                            <span class="quote" id="quote"></span>
-                            <i class="fas fa-quote-right"></i>
-                        </h1>
-                        <!-- Author to be Displayed Here -->
-                        <p class="author" id="author"></p>
+    </main>
 
-                        <hr />
-                        <div class="buttons">
-                            <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-social-buttons social">
-                    <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a class="social-button youtube" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+
+    <footer id="contact_">
+        <div class="outer" id="contact">
+            <div class="logo">
+                <img src="./assets/bg remove logo.png" alt="">
+                <pre>
+   <span>❝ </span>Always Fresh And Delicious, 
+            Make It Great<span> ❞</span>
+</pre>
             </div>
-        </div> -->
-    </div>
+            <div class="quote">
+<p id="text" class="text"></p>
+<p id="author" class="author"></p>
+
+            </div>
+            <div class="social">
+                <a href="https://github.com/SoubhikBiswas-gitHub" class="github" target="_blank"><i
+                        class="fa-brands fa-square-github "></i></a>
+                <a href="https://www.linkedin.com/in/soubhik-biswas96/" class="linkedin" target="_blank"><i
+                        class="fa-brands fa-linkedin "></i></a>
+                <a href="mailto:sbiswas773@gmail.com" class="mail" target="_blank"><i
+                        class="fa-solid fa-envelope "></i></a>
+            </div>
+        </div>
+        <div class="footer_img">
+            <img src="./assets/footer-illustration.png" alt="">
+        </div>
+
+    </footer>
+
+    <!-- </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6d903a652a.js" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+        integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+        crossorigin="anonymous"></script>
     <script src="./js/index.js"></script>
     <script src="./js/orderSatus.js"></script>
     <script src="./js/createOrder.js"></script>

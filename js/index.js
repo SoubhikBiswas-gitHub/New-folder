@@ -16,9 +16,8 @@ document.onreadystatechange = function () {
 // ************** Element Selector *********************
 // ***********************************************
 //Quote Generator
-const text=document.getElementById("quote");
+const text=document.getElementById("text");
 const author=document.getElementById("author");
-const tweetButton=document.getElementById("tweet");
 
 
 
@@ -178,6 +177,8 @@ let todaySummaryBody= document.getElementById("todaysAllDetails");
 const fullSummery=document.getElementById("fullSummery")
 const printBtn = document.getElementById("print")
 const summaryHide = document.getElementById("summaryHide")
+
+const ordderBgSet=document.getElementById("orderBg");
 // ***********************************************
 // ************** Element Selector *********************
 // ***********************************************
@@ -1236,8 +1237,10 @@ billGenerateBtn.addEventListener("click", () => {
   pointerEventSetDefault();
   totalWaitTimeSpanWithTitel.style.display="none"
   billGenerateBtn.style.display = "none";
-  // billParent.style.display = "none";
-
+  billPrintBtn.style.display = "block";
+  ordderBgSet.style.background="url(./assets/orderbg_.gif)";
+  ordderBgSet.style.backgroundPosition="center"
+  ordderBgSet.style.backgroundSize="cover"
 });
 
 // ***********************************************
@@ -1331,6 +1334,8 @@ billPrintBtn.addEventListener("click", () => {
   billGenerateButtonClickCheck = true;
   printBtnClickCheck = true;
   console.log(todayOrderSummaryArray);
+  billPrintBtn.style.display = "none";
+
 });
 // ***********************************************
 // **** Bill Print Clickz Event *********
@@ -1428,41 +1433,29 @@ const sizeSmall_Medium_Large_BtnSameUtilityFunction = (
 
 const getNewQuote = async () =>
 {
-    //api for quotes
-    var url="https://type.fit/api/quotes";    
-
-    // fetch the data from api
+    let url="https://type.fit/api/quotes";    
     const response=await fetch(url);
-    console.log(typeof response);
-    //convert response to json and store it in quotes array
     const allQuotes = await response.json();
-
-    // Generates a random number between 0 and the length of the quotes array
     const indx = Math.floor(Math.random()*allQuotes.length);
-
-    //Store the quote present at the randomly generated index
     const quote=allQuotes[indx].text;
-
-    //Store the author of the respective quote
     const auth=allQuotes[indx].author;
-
     if(auth==null)
     {
         author = "Anonymous";
     }
-
-    //function to dynamically display the quote and the author
-    text.innerHTML=quote;
+    text.innerHTML='"'+quote+'"';
     author.innerHTML="~ "+auth;
-
-    //tweet the quote
-    tweetButton.href="https://twitter.com/intent/tweet?text="+quote+" ~ "+auth;
+    let color= getRandomColor();
+    text.style.color=color;
+    
 }
-
 
 // ***********************************************
 // ****Footer Quote Generator *********
 // ***********************************************
+
+
+
 
 
 
@@ -1501,6 +1494,16 @@ summaryHide.addEventListener("click",()=>{
 // ***********************************************
 // **** Utility Function *********
 // ***********************************************
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 
 const checkBoxUnchecked_cancelBtnHide_pointerEventSetDefault = () => {
   checkBoxUnchacked();

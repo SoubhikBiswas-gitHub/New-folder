@@ -1118,86 +1118,122 @@ footer .social .mail:hover{
 
 
 
-/*
-@media only screen and (min-width: 780px) and (max-width: 1200px) {
-    html {
-        font-size: 35%;
-    }
 
-    .main-outer .pizza-type {
-        width: 40%;
-    }
-
-    .containerk .main {
-        margin-top: 14rem;
-    }
-
-    .main-outer .order {
-        width: 35%;
-    }
-
-    .main-outer .billGenerator {
-        width: 25%;
-    }
-} */
-
-
-/* Extra small devices (phones, 600px and down) */
-/* @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 350px) {
     html {
         font-size: 25%;
     }
 
-    .containerk .main {
-        margin-top: 18rem;
+    .main .hero{
+        background-image:url(./assets/herobgPortaite.jpg);
+        background-size: cover;
+        height: 50vh;
+    background-repeat: no-repeat;
     }
 
     .main-outer .pizza-type {
-        width: 30%;
-    }
-
-    .main-outer .order {
-        width: 37%;
-    }
-
-    .main-outer .billGenerator {
-        width: 37%;
-    }
-
-    .order .order-preview {
         width: 100%;
     }
 
-
-    .main-outer .pizza-type .pizza-details {
-
-        width: 80%;
-
+    .main-outer .order {
+        background-image: url(./assets/orderbg.gif);
+    background-position: center;
+    background-size: cover;
     }
-} */
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/*@media only screen and (min-width: 600px) {
-    ...
-}*/
+    .main-outer .pizza-type .pizza-details{
+        width: 30%;
+    }
 
-/* Medium devices (landscape tablets, 768px and up) */
-/*@media only screen and (min-width: 768px) {
-    ...
-}*/
-/*
+    .order .order-preview {
+        width: 45%;
+    }
 
-/* Large devices (laptops/desktops, 992px and up) */
-/*@media only screen and (min-width: 992px) {
-    ...
-}*/
+    .main-outer .billGenerator {
+        width: 100%;
+    }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media only screen and (min-width: 1200px) {
-        
-    html {
-            font-size: 42%;
+    footer .footer_img img{
+        height: 100px;
         }
-    
-        
-    } */
+}
+
+@media only screen and (max-width: 649px) {
+    html {
+        font-size: 35%;
+    }
+
+    .main .hero{
+        background-image:url(./assets/herobg.jpg);
+        background-size: cover;
+        height:100vh;
+    background-repeat: no-repeat;
+    }
+
+    .main-outer .pizza-type {
+        width: 100%;
+    }
+
+    .main-outer .order {
+        background-image: url(./assets/orderbg_.gif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: round;
+    }
+
+    .main-outer .pizza-type .pizza-details{
+        width: 30%;
+    }
+
+    .order .order-preview {
+        width: 30%;
+    }
+
+    .main-outer .billGenerator {
+        width: 100%;
+    }
+
+    footer .footer_img img{
+        height:200px;
+        }
+}
+
+
+@media only screen and (min-width: 650px)and (max-width: 950px) {
+    html {
+        font-size: 50%;
+    }
+
+    .main .hero{
+        background-image:url(./assets/herobg.jpg);
+        background-size: cover;
+        height: 70vh;
+    background-repeat: no-repeat;
+    }
+
+    .main-outer .pizza-type {
+        width: 100%;
+    }
+
+    .main-outer .order {
+        background-image: url(./assets/orderbg_.gif);
+    background-position: center;
+    background-size: contain;
+    background-repeat: round;
+    }
+
+    .order .order-preview {
+        width: 30%;
+    }
+
+    .main-outer .pizza-type .pizza-details{
+        width: 30%;
+    }
+    .main-outer .billGenerator {
+        width: 100%;
+    }
+
+    footer .footer_img img{
+        height: 200px;
+        }
+}

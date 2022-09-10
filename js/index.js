@@ -11,15 +11,12 @@ document.onreadystatechange = function () {
   }
 };
 
-
 // ***********************************************
 // ************** Element Selector *********************
 // ***********************************************
 //Quote Generator
 const text=document.getElementById("text");
 const author=document.getElementById("author");
-
-
 
 //Bill Node selector for copy to today summary
 const nodeCopyFrom = document.getElementById("nodeCopy");
